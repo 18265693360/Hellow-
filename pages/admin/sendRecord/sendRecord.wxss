@@ -1,0 +1,124 @@
+/* pages/admin/sendRecord/sendRecord.wxss */
+.headback{
+  background-color: #fff;
+  border-top: 1rpx solid #dbddec;
+  padding: 30rpx 0;
+}
+.headS{
+  height: 75rpx;
+  line-height: 75rpx;
+  background-color: #f0f2f6;
+  border:1px solid #e1e4eb;
+  border-radius: 10rpx;
+  width: 96%;
+  margin-left: 2%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+}
+.searchT{
+  width: 32rpx;
+  height: 32rpx;
+}
+.searchI{
+  display: inline-block;
+  font-size: 28rpx;
+  margin-left: 5rpx;
+  width: 90%;
+}
+.pl{
+  color: #8a8a8a;
+}
+.item{
+  margin-top: 15rpx;
+  background-color: #ffffff;
+  padding: 10rpx 10rpx 40rpx;
+  box-shadow: 4rpx 4rpx 4rpx 4rpx #e7e9ec;
+}
+.item-titles{
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #dbddec;
+  line-height: 70rpx;
+  flex: 1;
+  padding: 0 20rpx;
+}
+.eInvoice {
+  width: 100%;
+  background: #f4f6fa;
+  margin-top: 10rpx;
+  border-radius: 15rpx;
+  border: 1rpx solid #d1d4e8;
+  padding: 0 0 20rpx;
+}
+
+.item-title {
+  height: 60rpx;
+  padding-bottom: 5rpx;
+  margin: 10rpx 25rpx 0rpx 25rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #e0e0e0;
+}
+
+.title-date {
+  font-size: 26rpx;
+  color: #666666;
+  font-family: "Helvetica Neue",
+                 Helvetica,
+                 'microsoft yahei ui',
+                 'microsoft yahei',
+                 'simhei',
+                 Arial,
+                 sans-serif;
+}
+
+.title-type {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.type-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.type-text {
+  font-size: 26rpx;
+  margin-left: 15rpx;
+}
+
+.item-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  line-height: 45rpx;
+  width: 100%;
+}
+.unitName {
+  margin: 10rpx 30rpx;
+  font: 26rpx "Helvetica Neue", Arial, sans-serif;
+  color: #666666;
+}
+.amount {
+  font-size: 32rpx;
+  margin-right: 30rpx;
+}
+.code{
+  margin-left: 30rpx;
+  font-size: 26rpx;
+  color: #666666;
+  line-height: 45rpx;
+}
+.blue{
+  color: #485adc;
+}
+.isLoadmorehide{
+  display: none;
+}
+.abnor-hide {
+  display: none;
+}

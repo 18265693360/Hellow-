@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "编辑",
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index"
+  }
+}

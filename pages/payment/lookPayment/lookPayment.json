@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "票据详情",
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index"
+  }
+}

@@ -1,0 +1,58 @@
+/* pages/historyInvoiceDetail/historyInvoiceDetail.wxss */
+.font28{
+  font-size: 28rpx;
+}
+.font26{
+  font-size: 26rpx;
+}
+.colorB{
+  color: #4e4e4e;
+}
+.colorG{
+  color: #cccccc;
+}
+.fleft{
+  float: left;
+}
+.header{
+  background-color: #fff;
+  height: 80rpx;
+  width: 100%;
+  margin-top: 20rpx;
+  padding: 30rpx 40rpx;
+}
+
+.infoHrader{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 40rpx;
+  color: #999999;
+  font-size: 24rpx;
+}
+.infoContent-item{
+  border-bottom: 1px solid #dadbdc;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 0 40rpx;
+}
+.lab{
+  width: 140rpx;
+  padding: 25rpx 0;
+  line-height: 40rpx;
+}
+.tex{
+  width: 530rpx;
+  padding: 25rpx 0;
+  line-height: 40rpx;
+}
+.itemLaster{
+  border-bottom: none;
+}
+.right{
+  width: 50rpx;
+  height: 50rpx;
+  position:absolute;
+right:20rpx;
+top:60rpx;
+
+}

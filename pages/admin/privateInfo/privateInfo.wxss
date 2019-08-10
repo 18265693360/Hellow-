@@ -1,0 +1,55 @@
+/* pages/admin/privateInfo/privateInfo.wxss */
+
+.item {
+  height: 95rpx;
+  line-height: 95rpx;
+  background-color: #fff;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  border-bottom: 1rpx solid #dadbdc;
+}
+
+.item-value {
+  color: #4e4e4e;
+  padding-left: 40rpx;
+  font-size: 30rpx;
+}
+
+.item-name {
+  height: 140rpx;
+  line-height: 140rpx;
+  background-color: #fff;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  color: #666;
+  margin-top: 20rpx;
+  position: relative;
+}
+
+.item-title {
+  color: #999;
+  font-size: 24rpx;
+  height: 75rpx;
+  line-height: 75rpx;
+  padding-left: 40rpx;
+}
+
+view text {
+  color: #666;
+}
+
+.btn {
+  width: 150rpx;
+  height: 50rpx;
+  font-size: 26rpx;
+  color: #485adc;
+  line-height: 50rpx;
+  padding: 0 0;
+  background-color: #fff;
+  border: 1rpx solid #485adc;
+  border-radius: 25rpx;
+  position: absolute;
+  right: 40rpx;
+  top: 45rpx;
+}

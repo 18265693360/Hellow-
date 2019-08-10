@@ -1,0 +1,9 @@
+<!--pages/admin/realNameAuth/realNameAuth.wxml-->
+<view>
+  <view class='header-tip'><image class='header-img' src='/assests/images/anquan.png'></image>  信息仅用于实名认证，电子票夹保障您的安全</view>
+  <image class='body-img' src='/assests/images/xiangji.png'></image>
+  <view class='body-content'>当前绑定可拍身份证识别</view>
+  <view class='body-tip'>请通过拍身份证识别认证</view>
+
+ <button bindtap="ocr" class="btn-check" disabled="{{btnDisable}}" loading="{{btnLoading}}">开始拍照识别</button> 
+</view>

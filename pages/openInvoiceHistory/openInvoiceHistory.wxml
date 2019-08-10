@@ -1,0 +1,20 @@
+<!--pages/openInvoiceHistory/openInvoiceHistory.wxml-->
+<wxc-abnor type="RECORD" title="暂无开票历史" wx:if="{{abnorShow}}"></wxc-abnor>
+<view>
+  <scroll-view>
+    <view class='item' bindtap='jumpPage' wx:for='{{datas}}' wx:key="index" id='{{item.serialNumber}}' >
+      <view>
+        <image class='time-icon' src='../../assests/images/gray-time.png' mode='aspectFit'></image>
+        <text class='time-text'>{{item.requestTime}}</text>
+        <image class='right-icon fright' src='../../assests/images/icon-arrow-r.png' mode='aspectFit'></image>
+        <text class='invoiceStatus fright'>{{item.issueInvoiceStatus}}</text>
+      </view>
+      <!-- <view class='item-center'><text>{{item.saleName}}</text></view> -->
+      <view>
+        <view class='item-detaile'><text>{{item.saleName}}</text></view>
+        <view class='fright item-money'><text class='money-text'>{{item.amount}}</text>元</view>
+      </view>
+    </view>
+  </scroll-view>
+
+</view>

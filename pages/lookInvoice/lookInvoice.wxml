@@ -1,0 +1,26 @@
+<!--pages/lookInvoice/lookInvoice.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <view class='email-info input-{{inputStatus}}'>
+    <input name="email" bindinput="emailInput" class="email-input" placeholder-class="psection" type="text" value="{{sentToEmail}}" placeholder="{{placeH}}" cursor-spacing='100' />
+  </view>
+</wxc-dialog>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<view wx:if='{{invoiceT}}'>
+  <image class="bill-image" mode='widthFix' src="data:image/jpeg;base64,{{detail.img}}"></image>
+  <image wx:if="{{reiStatus}}" class='reiImage' mode='widthFix' src='{{reiUrl}}'></image>
+</view>
+<view wx:if='{{!invoiceT}}'>
+  <swiper class='scrooll' indicator-dots="{{indicatorDots}}">
+    <block wx:for="{{paramlist}}" wx:key="{{index}}">
+      <swiper-item>
+        <image class='item-img' mode='widthFix' src="data:image/png;base64,{{item}}" bindtap='imgYu'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<button class="btn-receive isShow{{isShow?'':'hide'}}" bindtap="sentToEmailTap">
+  <text>发送至邮箱</text>
+</button>
+<view class='foot-text'>电子票据展示由博思软件提供技术支持</view>

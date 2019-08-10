@@ -1,0 +1,248 @@
+/* pages/payment/paymentLists/paymentLists.wxss */
+/* pages/paymentList/paymentList.wxss */
+page text{
+  font-size: 26rpx;
+}
+.item{
+  margin-top: 15rpx;
+  background-color: #ffffff;
+  padding: 10rpx 10rpx 40rpx;
+}
+.item-title{
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #dbddec;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+}
+.item-date{
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #474747;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.item-r{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  background-color: #f4f6fa;
+  border: 1rpx solid #c9cbd8;
+  border-radius: 10rpx;
+  height: 135rpx;
+  margin-top: 20rpx;
+}
+.item-r-img{
+  width: 30rpx;
+  position:relative;
+
+
+}
+.item-r-con{
+  font-size: 26rpx;
+  width: 300rpx;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15rpx;
+}
+.item-r-right{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+.item-r-status{
+  font-size: 30rpx;
+  color: #fc9153;
+}
+.item-r-yuan{
+  color: #666666;
+  font-size: 24rpx;
+}
+.item-r-money{
+  font-size: 44rpx;
+}
+.item-footer{
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 20rpx 0;
+}
+.item-f-money{
+  font-size: 32rpx;
+  color: #fc9153;
+}
+.item-footer view{
+  flex: 1;
+  line-height: 40rpx;
+}
+.item-footer button{
+  font-size: 30rpx;
+  color: #ffffff;
+  width: 210rpx;
+  height: 85rpx;
+  border-radius: 6rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+}
+.search{
+  background-color: #ffffff;
+  font-size: 26rpx;
+  height: 70rpx;
+  padding: 0 10rpx;
+  position: fixed;
+  width: 730rpx;
+  z-index: 99;
+}
+.item-date-s{
+  color: #666666;
+}
+.footerButton{
+  color: #495bdc;
+  font-size: 30rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 85rpx;
+  background-color: #ffffff;
+  border-top: 1rpx solid #dbddec;
+  position: fixed;
+  bottom: 0;
+}
+.scrool{
+  padding-top:70rpx;
+padding-bottom:200rpx;
+
+}
+.abnor-hide {
+  display: none;
+}
+.isLoadmorehide{
+  display: none;
+}
+.tapSendOthershow{
+  display: block;
+}
+.tapSendOtherhide{
+  display: none;
+}
+/*  重写 checkbox 样式  */
+/* 未选中的 背景样式 */
+checkbox .wx-checkbox-input{
+   border-radius: 50%;/* 圆角 */
+   width: 36rpx; /* 背景的宽 */
+   height: 36rpx; /* 背景的高 */
+}
+/* 选中后的 背景样式 （红色背景 无边框 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked{
+   border: 1px solid #fc9153 ;
+   background:#fc9153;
+}
+/* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before{
+   border-radius: 50%;/* 圆角 */
+   width: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   height: 40rpx;/* 选中后对勾大小，不要超过背景的尺寸 */
+   line-height: 40rpx;
+   text-align: center;
+   font-size:30rpx; /* 对勾大小 30rpx */
+   color:#fff; /* 对勾颜色 白色 */
+   background: transparent;
+   transform:translate(-50%, -50%) scale(1);
+   -webkit-transform:translate(-50%, -50%) scale(1);
+}
+.btn-check{
+  width: 200rpx;
+  height: 80rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 32rpx;
+  margin: 20px 0;
+}
+.foot{
+  background-color: #fafafa;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.foot-tip{
+  font-size: 22rpx;
+  color: #666666;
+  border-bottom:1rpx solid #dbddec;
+  border-top:1rpx solid #dbddec;
+  line-height: 50rpx;
+  padding: 0 30rpx;
+}
+.foot-tip text:nth-child(even){
+  color: #fc9153;
+}
+.foot-down{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 30rpx;
+}
+.dialogInp{
+  width: 460rpx;
+  line-height: 80rpx;
+  height: 80rpx;
+  font-size: 28rpx;
+  border: 1rpx solid #dbddec;
+  padding: 0 20rpx;
+}
+.dialogS{
+  width: 250rpx;
+}
+.dialog{
+  color: #a1a1a1;
+}
+.diaFlex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+   margin-top: 20rpx;
+}
+.queryCode{
+  width: 186rpx;
+  border: 1rpx solid #dbddec;
+  line-height: 82rpx;
+  height: 82rpx;
+  font-size: 28rpx;
+  color: #485adc;
+  padding: 0;
+  background-color: #ffffff;
+  border-radius: 0;
+}
+.dialogTip{
+  color: #a1a1a1;
+  font-size: 22rpx;
+  margin: 20rpx 0;
+}
+.ycan{
+  width: 50%;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index:99;
+  background-color: #ffffff;
+  font-size: 26rpx;
+}
+.clearhide{
+  display: none
+}
+.isShowFootershow{
+    display: none;
+}
+page{
+  height: 100%;
+}
+.forbid{
+  height: 100%;
+  overflow: hidden;
+}

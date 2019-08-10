@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index",
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index",
+    "wxc-loadmore": "/../../../UI/wxc-loadmore/dist/index"
+  },
+  "navigationBarTitleText": "历史记录"
+}

@@ -1,0 +1,66 @@
+/* pages/openInvoiceHistory/openInvoiceHistory.wxss */
+.item{
+  margin: 15rpx 10rpx 0;
+  background-color: #ffffff;
+  height: 140rpx;
+  border-radius: 10rpx;
+  border: 1px solid #dadded;
+  padding: 30rpx;
+  font-size: 26rpx;
+  color: #949494;
+}
+.time-icon{
+  width: 26rpx;
+  height: 26rpx;
+}
+.time-text{
+  font-size: 28rpx;
+  margin-left:20rpx;
+  top:-1px;
+  position:relative;
+  color: #000;
+}
+.right-icon{
+  width:24rpx;
+  height:30rpx;
+  top:3rpx;
+  position:relative;
+}
+.invoiceStatus{
+  top:-1px;
+  position:relative;
+  margin-right: 10rpx;
+  
+}
+.item-center{
+  margin: 35rpx 0 6rpx;
+  width: 100%;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  white-space:nowrap; 
+}
+.fright{
+  float: right;
+}
+.money-text{
+  font-size: 44rpx;
+  color: #333333;
+}
+.item-detaile{
+  position:relative;
+  top:20px;  
+  width:400rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.item-money{
+  position: relative;
+  top: 0rpx;
+  width: 260rpx;
+  text-align: right;
+}
+.infoContent{
+  background-color: #ffffff;
+  padding: 0 40rpx;
+}

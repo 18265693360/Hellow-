@@ -1,0 +1,14 @@
+<!--pages/billSuccess/billSuccess.wxml-->
+<view>
+  <view>
+    <image mode='widthFix'  class='img' src='../../assests/images/tijiaochenggong.png' > </image>
+  </view>
+  <view class='tip' >提交成功</view>
+  <view class='tip3'>系统正在快速开票中...</view>
+   <button class='btn-archive' bindtap="jumpContinue">
+      <text>继续开票</text>
+    </button>
+    <button class='gray' bindtap="jumpHistory">
+      <text>开票历史</text>
+    </button>
+</view>

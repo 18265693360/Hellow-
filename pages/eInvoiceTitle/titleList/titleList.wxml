@@ -1,0 +1,37 @@
+ <wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <input class="input input-{{inputShow}}" bindinput="codeInput" placeholder="请输入上图答案" />
+</wxc-dialog>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-popup class="J_Popup">
+  <view class='popup__content'>
+    <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+  </view>
+</wxc-popup> 
+<view class='add-related-user'>
+  <view class='find-left'>
+    <image mode='widthFix' class='img-icon' src='/assests/images/icon-find.png'></image>
+    <input bindinput="findTitleInput" class="user-input" placeholder-class="psection" type="text" value="{{addRelatedName}}" placeholder="查找票据抬头" />
+  </view>
+  <button class='btn-add-related-user ' bindtap="toTitleEdit">
+    <text>添加</text>
+  </button>
+</view>
+<view class='container'>
+  <block wx:for="{{results}}" wx:key="{{index}}">
+    <view data-text="{{item}}" class='related-user' bindtap='toTitleDetailTap'>
+      <view class='item-head'>
+        <view class='user-name'>
+          {{item.partyName}}
+        </view>
+        <view wx:if="{{item.titleType==0}}" class='eInvoice-type'>企业单位</view>
+        <view wx:if="{{item.titleType==1}}" class='eInvoice-type'>个人/非企业单位</view>
+      </view>
+      <view class='item-foot'>
+        <!-- <image class='icon-default' src='/assests/images/icon-default.png'></image> -->
+        <image class='icon-delete' src='/assests/images/icon-delete.png' catchtap="isDelTitleTap" data-invoicetitleid="{{item.invoiceTitleId}}"></image>
+      </view>
+    </view>
+  </block>
+</view>

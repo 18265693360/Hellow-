@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "个人中心",
+  "usingComponents": {
+    "wxc-dialog": "/../../UI/wxc-dialog/dist/index",
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index"
+  }
+}

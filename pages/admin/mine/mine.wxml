@@ -1,0 +1,77 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}"></wxc-dialog>
+<view class='user-info'>
+  <view class='exit'>
+    <!-- <image class='img-about' src='/assests/images/icon-setUp.png'></image> -->
+  </view>
+  <!--bindtap='jumpInfoPage'-->
+  <image class='user-avatar' src='/assests/images/icon-avatar-mine.png'></image>
+  <!-- <button wx:if="{{ifAvatarUrl}}" class='btn-userInfo' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>  
+  open-type="getPhoneNumber" -->
+  <button wx:if='{{!isLogin}}' style="border-color:#fff;" plain='true' class='btn-login'  bindtap="getPhoneNumber">
+    <text>注册/登录</text>
+  </button>
+  <view wx:if='{{login}}' class='name'>{{name}}</view>
+</view>
+<view class='space'></view>
+<view class='service-list'>
+  <view class='service-item' bindtap='jumpTitle'>
+      <image class='service-img' src='/assests/images/icon-title.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        票据抬头
+      </view>
+      <image class='img-arrow' src='/assests/images/icon-arrow-r.png'></image>
+    </view>
+  </view>
+
+ <view class='service-item' bindtap='jumpReal'> 
+    <image class='service-img' src='/assests/images/shiming.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        实名认证
+      </view>
+      <view class='service-name' style='color:#b3b3b3;'>{{realText}}<image class='img-arrow' style='top:3rpx;' src='/assests/images/icon-arrow-r.png'></image></view>
+      
+    </view>
+  </view> 
+  <navigator class='service-item'  url='/pages/admin/sendRecord/sendRecord'  hover-class="none">
+    <image class='service-img' mode='widthFix' src='/assests/images/sendjilu.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        发送记录
+      </view>
+      <image class='img-arrow' src='/assests/images/icon-arrow-r.png'></image>
+    </view>
+  </navigator>
+  <view class='service-item' bindtap='jumpHistory'>
+    <image class='service-img' src='/assests/images/lishi_03.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        开票历史
+      </view>
+      <image class='img-arrow' src='/assests/images/icon-arrow-r.png'></image>
+    </view>
+  </view>
+ 
+   <navigator class='service-item-last' url='/pages/admin/agreement/agreement' hover-class="none">
+    <image class='service-img' src='/assests/images/icon-about.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        用户协议
+      </view>
+      <image class='img-arrow' src='/assests/images/icon-arrow-r.png'></image>
+    </view>
+  </navigator>
+    <!-- <navigator class='service-item' url='/pages/bl/bl' style='border:none;'  hover-class="none">
+    <image class='service-img dunpai' src='/assests/images/anquan.png'></image>
+    <view class='item-content'>
+      <view class='service-name'>
+        票据授权
+      </view>
+      <image class='img-arrow ' src='/assests/images/icon-arrow-r.png'></image>
+    </view>
+  </navigator> -->
+</view>
+<view wx:if="{{isLogin}}" bindtap='exitLoginTap' class='btn-exitLogin'>退出登录</view>

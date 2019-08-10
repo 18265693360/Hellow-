@@ -1,0 +1,53 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+</wxc-dialog>
+<view class='container'>
+  <view class='QRcode'>
+    <view class='QRcode-title'>开票的时候出示此二维码</view>
+    <view class='QRcode-body'>
+      <canvas class='canvas' canvas-id='canvas' bindlongtap='save'></canvas>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='item'>
+      <view class='item-title'>名称</view>
+      <view class='item-text'>{{result.partyName}}</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>抬头类型</view>
+      <view wx:if="{{result.titleType==0}}" class='item-text'>企业单位</view>
+      <view wx:if="{{result.titleType==1}}" class='item-text'>个人/非企业单位</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>税号</view>
+      <view class='item-text'>{{result.taxNumber || ''}}</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>单位地址</view>
+      <view class='item-text'>{{result.partyAddress || ''}}</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>电话号码</view>
+      <view class='item-text'>{{result.phoneNumber || ''}}</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>开户银行</view>
+      <view class='item-text'>{{result.bankOpen || ''}}</view>
+    </view>
+    <view class='item'>
+      <view class='item-title'>银行账户</view>
+      <view class='item-text'>{{result.bankAccount || ''}}</view>
+    </view>
+  </view>
+  <view class='options'>
+    <button class='btn-del' bindtap='isDelTitleTap'>删除</button>
+    <button class='btn-edit' bindtap='toTitleEdit'>编辑</button>
+  </view>
+</view>
+<view class='foot'>
+  <view class='to-home' bindtap='toHomeTap'>
+    <image class='icon-home' src='/assests/images/icon-home-white.png'></image>
+    <view class='foot-text'>回到首页</view>
+  </view>
+</view>

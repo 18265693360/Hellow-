@@ -1,0 +1,43 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <view class='email-info input-{{inputStatus}}'>
+    <input name="email" bindinput="emailInput" class="email-input" placeholder-class="psection" type="text" value="{{sentToEmail}}" placeholder="{{placeH}}" />
+  </view>
+</wxc-dialog>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-popup class="J_Popup">
+  <view class='popup__content'>
+    <canvas class='canvas' canvas-id='canvas' style=''></canvas>
+  </view>
+</wxc-popup>
+
+<view class="container container-{{containerStatus}}">
+  <swiper class='scrooll' indicator-dots="{{indicatorDots}}">
+    <block wx:for="{{paramlist}}" wx:key = "{{index}}">
+      <swiper-item>
+         <image class='item-img' mode='widthFix' src="data:image/png;base64,{{item}}" bindtap='imgYu'></image>
+      </swiper-item>
+    </block>
+  </swiper>
+
+    <!-- <scroll-view class='scrooll' scroll-x scroll-y bindscroll="scrollFn">
+    <view class="item1" wx:for="{{paramlist}}">
+     
+    </view>
+  </scroll-view> -->
+  
+  <view class='options'>
+  <button class='btn-receive archive-{{unArchiveStatusSend}}' bindtap="sentToOther">
+      <text>发送给他人</text>
+    </button>
+    <button class='btn-receive' wx:if="{{isSendEmail}}" bindtap="sentToEmailTap">
+      <text>发送至邮箱</text>
+    </button>
+    
+    <button class='btn-archive archive-{{unArchiveStatus}}' bindtap="showPopup">
+      <text>显示二维码</text>
+    </button>
+  </view>
+  <view class='foot-text'>电子票据展示由博思软件提供技术支持</view>
+</view>

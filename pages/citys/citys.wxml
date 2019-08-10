@@ -1,0 +1,55 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<!-- <view class='container'>
+  <view class='history'>
+    <view class='title'>
+      历史访问省份
+  </view>
+  <view class='historyCitys' >
+    <block wx:for='{{historyCitys}}' wx:key="{{index}}">
+      <view class='city' catchtap="gotoresult" id="{{item.cityCode}}" data-name="{{item.cityName}}">
+        {{item.cityName}}
+      </view>
+    </block>
+  </view>
+  </view>
+  
+  <view class='common'>
+    <view class='title'>
+      所有省份
+    </view>
+    <view class='hotCitys' >
+      <block wx:for='{{hotCitys}}' wx:key="{{index}}">
+        <view class='city' catchtap="gotoresult" id="{{item.cityCode}}" data-name="{{item.cityName}}">
+          {{item.cityName}}
+        </view>
+      </block>
+    </view>
+  </view>
+</view> -->
+<!-- <view class='head'>
+    <text decode="{{true}}">当前：{{cityName}}&nbsp;&nbsp;&nbsp;&nbsp;{{company}}</text>
+  </view> -->
+<view>
+  <view class='container'>
+
+    <scroll-view  scroll-y class='scroll-left'>
+      <view class='city-left'>
+      <view class="city-left-item {{'66'==idx?'hover':''}}" bindtap='agencyByCity' id="66">全部单位</view>
+      <view class="city-left-item {{index==idx?'hover':''}}" wx:for="{{hotCitys}}" wx:key="{{index}}" id="{{index}}" bindtap='agencyByCity'>{{item.cityName}}</view>
+    </view>
+    </scroll-view>
+    <scroll-view scroll-y scroll-with-animation scroll-into-view="{{cityListId}}" style='height:100vh;'>
+      <view class='city-right'>
+        <block wx:for="{{parameters}}" wx:key="{{idx}}" wx:for-item='letterItem' wx:for-index = 'idx'>
+          <view class='city_first_letter' id='{{letterItem.letter}}'>{{letterItem.letter}}</view>
+          <text class='city_name' wx:for='{{letterItem.data}}' wx:key='this' decode="{{true}}" bindtap='gotoresult' id="{{index}}"  data-id='{{idx}}'>&nbsp;&nbsp;&nbsp;&nbsp;{{item.agencyName}}</text>
+        </block>
+
+      </view>
+    </scroll-view>
+
+  </view>
+  <view class='city-em'>
+    <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap' data-item='{{item}}'>{{item}}</text>
+  </view>
+</view>

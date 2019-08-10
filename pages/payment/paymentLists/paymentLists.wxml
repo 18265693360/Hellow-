@@ -1,0 +1,86 @@
+<!--pages/payment/paymentLists/paymentLists.wxml-->
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" title="发送给他人"
+ confirm-text="确定" cancel-text="取消"
+ bindconfirm="onConfirm" bindcancel="onCancel">
+  <view>
+      <input class='dialogInp' bindinput='getphone' value="{{phone}}" placeholder-class='dialog' cursor-spacing='100' placeholder='请输入对方手机号'></input>
+    <view class='diaFlex'>
+      <input class='dialogInp dialogS' value="{{code}}" bindinput='getcode'  placeholder-class='dialog'  placeholder='请输入验证码' cursor-spacing='100'></input>
+      <button disabled='{{disable}}'  bindtap='getQuerycode' class='queryCode'>{{sec}}</button>
+    </view>
+    <view class='dialogTip'>*请联系对方查收并提供验证码</view>
+  </view>
+</wxc-dialog>
+<view class="{{showDialog?'forbid':''}}">
+  <view class='search'>
+    <wxc-select partLeft="住院日期" partRight="{{agencyName}}" catchshowDatepicker="filterPattern" catchhidebg="filterPattern" 
+  catchtapDay="tapDayTap" curYear="{{curYear}}" curMonth="{{curMonth}}" curDate="{{curDate}}" >
+</wxc-select>
+ 
+  </view>
+ <view class=" ycan clear{{isclear?'show':'hide'}}" bindtap='clearDate'>{{agencyName}}
+  <wxc-icon type='no'></wxc-icon>
+  </view>
+  <view class='scrool'>
+ 
+    <view class='item' wx:for='{{dataList}}' wx:key='{{index}}' id='sdfsf'>
+      <view class='item-title'>{{item.agencyName}}</view>
+      <view class='item-date'>
+        <text>住院就诊号：{{item.uniqueCode}}</text>
+        <text>住院日期：<text class='item-date-s'>{{item.date}}</text></text>
+      </view>
+      <view class='item-date'><text>患者姓名：<text class='item-date-s'>{{item.payerName}}</text></text></view>
+      <view>
+        <view class='item-r' 
+        wx:for='{{item.list}}'
+         wx:for-index='idx' 
+         wx:key='{{idx}}'
+          wx:for-item='itemlist' 
+          bindtap='jumpDetail' 
+          data-id='{{itemlist.id}}'
+          data-index='{{index}}'
+          data-idx='{{idx}}'>
+          <view>
+            <image class='item-r-img' src='/assests/images/icon-eInvoice-content.png' mode='widthFix'></image>
+          </view>
+          <view class='item-r-con'>
+            <view>缴费时间：{{itemlist.issueDate}}</view>
+            <view>票据号码：{{itemlist.voucherNumber}}</view>
+            <view>支付方式：{{itemlist.payMethod}}</view>
+          </view>
+          <view class='item-r-right'>
+            
+            <view class='item-r-yuan'>
+              <text class='item-r-money'>{{itemlist.amount}}</text>元</view>
+              <view>
+              <checkbox checked='{{checked}}' id="{{itemlist.id}}"  catchtap='checkboxChange' data-M='{{itemlist.amount}}'></checkbox>
+            </view>
+          </view>
+          
+        </view>
+
+      </view>
+      <view class='item-footer'>
+        <view>
+          <text class='item-f-money'>{{item.count}}</text> 笔，共
+          <text class='item-f-money'>{{item.aoumt}}</text>元
+        </view>
+      </view>
+    </view>
+
+    <wxc-loadmore is-end="{{true}}" text="已加载全部票据" class="isLoadmore{{isLoadmore?'':'hide'}}"></wxc-loadmore>
+
+  </view>
+ 
+  <view class="foot isShowFooter{{abnorShow}}">
+    <view class='foot-tip'><text>选中：</text><text>{{totalNum}}</text>,<text>共</text><text>{{totalMoney}}</text><text>元</text></view>
+    <view class='foot-down'>
+     <view style='line-height:150rpx;'>
+      <checkbox bindtap='allCheckboxChange' checked='{{allChecked}}' ></checkbox><label style='font-size:28rpx;color:#666666;'>{{checkboxtext}}</label>
+      </view>
+      <button class='btn-check' bindtap='showBox'>下一步</button>
+    </view>
+  </view>
+</view>

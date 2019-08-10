@@ -1,0 +1,49 @@
+<!--pages/customCompany/customCompany.wxml-->
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view>
+  <view class='headback'>
+    <view class='headS' bindtap='getFocus'>
+      <image mode='widthFix' class='searchT' src='../../assests/images/searchT.png'></image>
+      <input class='searchI' bindblur='searchD' placeholder-class="pl" bindinput='searchN' confirm-type='search' placeholder='单位名称搜索' value='{{searchInputValue}}'></input>
+    </view>
+  </view>
+
+  <view class='content'>
+   
+    <scroll-view scroll-y scroll-with-animation scroll-into-view="{{cityListId}}" style='height:100vh;'>
+      <!-- <view class='flex content-top'>
+        <view style='font-size:30rpx;'>常用单位</view>
+        <view>2</view>
+      </view> -->
+       <!-- 常用单位 -->
+      <!-- <view class='content-c' style='border-top: 1px solid #dddddd;'>
+        <view class='flex content-item'>
+          <image src='/assests/images/logo01.png' mode='widthFix'></image>
+          <view>西南大学</view>
+        </view>
+        <view class='flex content-item'>
+          <image src='/assests/images/logo01.png' mode='widthFix'></image>
+          <view>中国音乐学院</view>
+        </view>
+      </view> -->
+       <!-- 更多单位 -->
+      <view class='content-f' style='border-top: 1px solid #dddddd;'>
+        <view wx:for='{{allRelationComapny}}' wx:key='{{index}}'>
+          <view class='content-Z' id='{{item.letter}}'>{{item.letter}}</view>
+          <view class='flex content-item' wx:for='{{item.data}}' wx:for-item='letterItem' wx:for-index = 'idx' data-id='{{letterItem.agencyId}}' bindtap='jumpCustomIndex'>
+            <image src='{{letterItem.minLogo}}' mode='widthFix' ></image>
+            <view>{{letterItem.agencyName}}</view>
+          </view>
+          
+        </view>
+
+      
+      </view>
+    </scroll-view>
+  </view>
+
+   <view class='city-em'>
+    <text class='letter_item' wx:for='{{letter}}' wx:key='this' catchtap='letterTap' data-item='{{item}}'>{{item}}</text>
+  </view>
+</view>

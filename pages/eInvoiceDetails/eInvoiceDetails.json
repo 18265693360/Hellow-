@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "票据详情",
+  "usingComponents": {
+    "wxc-dialog": "/../../UI/wxc-dialog/dist/index",
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index",
+    "wxc-popup": "/../../../UI/wxc-popup/dist/index",
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index"
+  }
+}

@@ -1,0 +1,466 @@
+/**
+ *question1:  (本小程序中没有用到)
+ *解决transform使用导致z-index失效而带来的层级问题 
+ *http://www.w3cplus.com/css/3d-transform-and-z-index.html
+ *http://www.zhangxinxu.com/wordpress/2016/08/safari-3d-transform-z-index/
+ */
+  /* page{
+     height: 85rpx;
+ }  */
+.page{
+    font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, 'Droid Sans Fallback', 'Microsoft Yahei', sans-serif;
+    /* height: 100%; */
+    background:#eaedf2;
+
+    overflow: hidden;
+}
+.nav{
+    /* position: fixed; */
+    width: 100%;
+    z-index: 99;
+    display: flex;
+    /* top:0; */
+    /* border-bottom: 1rpx solid #6896ff; */
+    background: #fff;
+}
+.nav-son{
+    display: flex;
+    flex: 1;
+    text-align: center;
+    height: 65rpx;
+    align-items:center;
+    justify-content:center;
+    font-size: 26rpx;
+}
+
+.content{
+    display: inline-block;
+}
+.icon{
+    display: inline-block;
+    border: 8rpx solid transparent;
+    border-top: 8rpx solid #9b9b9b;
+    margin-left: 10rpx;
+}
+.temp{
+    position: fixed;
+    z-index: 4;
+}
+.temp1{
+    display: none;
+    width: 100%;
+    margin-top: 83rpx;
+    max-height: 510rpx;
+    overflow-y: scroll;
+    padding: 0 0 0 20rpx;
+    line-height:100rpx;
+    background: #fff;
+}
+.temp2{
+    display: none;
+    width: 100%;
+    margin-top: 0;
+    max-height: 750rpx;
+    overflow-y: scroll;
+    padding: 0 20rpx 0 20rpx;
+    line-height:100rpx;
+    background: #fff;
+    box-sizing: border-box;
+}
+.slidedown{
+    transform:  translateY(0%);
+}
+.temp view{
+    border-top: 1rpx solid #d1d3d4;
+    font-size: 28rpx;
+    color: #666;
+}
+.quyu{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 480rpx;
+    z-index: 5;
+}
+.quyu .qy{
+    overflow-y: scroll;
+    float: left;
+    width: 33.33%;
+    height: 480rpx;
+    line-height: 80rpx;
+    box-sizing: border-box; 
+    font-size: 28rpx;
+    color: #717273;
+}
+.qy view{
+    text-overflow: ellipsis;
+    overflow: hidden; 
+    white-space:nowrap;  
+    padding-left: 15rpx; 
+}
+.son-left{
+    background: #c5c5c5;
+}
+.son-center{
+    background: #e0e0e0;
+}
+.son-right{
+    background: #fff;
+}
+.son-right view{
+     margin-bottom: -1rpx;
+    border-bottom: 1rpx solid #c5c5c5;
+}
+.current{
+    background: #e0e0e0;
+}
+.current2{
+    background: #fff;
+}
+.fullbg{
+    position: fixed;
+    top:190rpx;
+    bottom: 0;
+    z-index: 1; 
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 1, 1);
+    transition: all 0.3s;
+    opacity: 0;
+}
+.fullopacity{
+    opacity: .5;
+}
+.nav-son.active .content{
+    color: #6896ff;
+}
+.nav-son.active .icon{
+    border-bottom: 8rpx solid #6896ff;
+    border-top:0;
+}
+@keyframes slidown{
+    from{
+        transform:  translateY(-80rpx);
+    }
+    to{
+        transform:  translateY(0%);
+    }
+}
+.slidown{
+    display: block;
+    animation: slidown .3s ease-in both;
+}
+@keyframes slidup{
+    from{
+        transform:  translateY(0%);
+        opacity: 1;
+    }
+    to{
+        transform:  translateY(-200%);
+        opacity: 0;
+    }
+}
+.slidup{
+    display: block;
+    animation: slidup .3s ease-in both;
+}
+.disappear{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.box {
+	display: flex;
+}
+
+.box-lr {
+	flex-direction: row;
+}
+
+.box-rl {
+	flex-direction: row-reverse;
+}
+
+.box-tb {
+	flex-direction: column;
+}
+
+.box-pack-center {
+	justify-content: center;
+}
+
+.box-align-center {
+	align-items: center;
+}
+
+.box-wrap {
+	flex-wrap: wrap;
+}
+
+.flex {
+	flex-grow: 1;
+}
+
+.bg {
+	background-image: linear-gradient(to bottom, #faefe7, #ffcbd7);
+	overflow: hidden;
+}
+
+.gray-color {
+	color: #9c9c9c;
+}
+
+.white-color {
+	color: #fff;
+}
+
+.fs24 {
+	font-size: 24rpx;
+}
+
+.fs28 {
+	font-size: 28rpx;
+}
+
+.fs32 {
+	font-size: 32rpx;
+}
+
+.fs36 {
+	font-size: 36rpx;
+}
+
+/* .datepicker-bg {
+	position: fixed;
+  background: red;
+	top: 30rpx;
+  z-index: 999;
+
+} */
+
+.datepicker-input {
+	width: 300rpx;
+	height: 50rpx;
+	border: 1rpx solid #dadada;
+	border-radius: 10rpx;
+	padding: 10rpx;
+	font-size: 28rpx;
+}
+/* stylelint-disable-next-line */
+.datepicker-input::-webkit-input-placeholder {
+	color: #dadada;
+}
+
+.datepicker-wrap {
+	background-color: #fff;
+  width: 750rpx;
+  height: 654rpx;
+	box-shadow: 0 0 10rpx 0 #dadada;
+	position: fixed;
+  margin-top: 0rpx;
+  z-index: 4;
+}
+
+.top-handle {
+	height: 80rpx;
+}
+
+.prev {
+	text-align: right;
+	height: 80rpx;
+}
+
+.next {
+	height: 80rpx;
+}
+
+.prev-handle {
+	width: 80rpx;
+	height: 100%;
+}
+
+.next-handle {
+	width: 80rpx;
+	height: 100%;
+}
+.data-border{
+  padding: 0 10rpx 0 10rpx;
+  border: 1rpx solid #d1d3d4;
+}
+.date-area {
+	width: 50%;
+	height: 80rpx;
+	text-align: center;
+  
+}
+
+.weeks {
+	height: 50rpx;
+	line-height: 50rpx;
+	opacity: 0.5;
+}
+
+.week {
+	text-align: center;
+}
+
+.days {
+	height: 500rpx;
+}
+
+.grid {
+	width: 14.285714285714286%;
+}
+
+.day {
+	width: 60rpx;
+	height: 60rpx;
+	font-size: 26rpx;
+	font-weight: 400;
+}
+
+.normal-day-color {
+	color: #333333;
+}
+
+.disable-day-color {
+	color: #ddd;
+}
+
+.border-radius {
+	border-radius: 50%;
+	position: relative;
+	left: 0;
+	top: 0;
+	color: #fff;
+}
+
+.blue-bg {
+	background-color: #4e60df;
+}
+
+.purple-bg {
+	background-color: #b8b8f1;
+}
+
+.right-triangle::after {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: 15rpx solid transparent;
+	border-left-color: #ff629a;
+	position: absolute;
+	right: -22rpx;
+	top: 18rpx;
+}
+
+.left-triangle::before {
+	content: "";
+	display: block;
+	width: 0;
+	height: 0;
+	border: 15rpx solid transparent;
+	border-right-color: #ff629a;
+	position: absolute;
+	left: -22rpx;
+	top: 18rpx;
+}
+
+.tips {
+	text-align: center;
+	margin-top: 20rpx;
+	margin-bottom: 20rpx;
+}
+
+.types {
+	background-color: #ffedf4;
+	height: 50rpx;
+}
+
+.types-desc {
+	padding: 0 20rpx;
+}
+
+.type-name {
+	margin-top: 50rpx;
+	margin-bottom: 30rpx;
+}
+
+.type-desc {
+	padding: 0 35rpx;
+	line-height: 38rpx;
+}
+
+.explain {
+	border-top: 1px solid #eee;
+	width: 90%;
+	margin: 20rpx 5% 20rpx 5%;
+	padding: 20rpx 0;
+}
+
+.explain-title {
+	font-weight: bold;
+	margin-bottom: 15rpx;
+}
+
+.explain-item {
+	padding: 8rpx 20rpx;
+	color: #fff;
+}
+
+.left-border-radius {
+	border-top-left-radius: 20rpx;
+	border-bottom-left-radius: 20rpx;
+}
+
+.right-border-radius {
+	border-top-right-radius: 20rpx;
+	border-bottom-right-radius: 20rpx;
+}
+.foot-picker{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background: #fff;
+  border-top: 1rpx solid #d1d3d4;
+  z-index: 4;
+}
+.picker-btns {
+  width: 100%;
+	height: 120rpx;
+	line-height: 120rpx;
+  color: #9c9c9c;
+}
+
+.picker-confirm {
+	margin-right: 50rpx;
+}
+
+.picker-cancel {
+	margin-left: 50rpx;
+}
+
+.picker-view {
+	color: #333333;
+	text-align: center;
+}
+ .box-pack-between {
+	justify-content: space-between;
+} 
+.picker-style{
+  background: #fff;
+}

@@ -1,0 +1,15 @@
+<!--pages/QRCode/QRCode.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view>
+  <image class='bacgG' src='/assests/images/qrcode-background.jpg' mode='widthFix'></image>
+  <view class='title'>请向工作人员出示此二维码</view>
+  <image class='qrcode' src="data:image/jpeg;base64,{{qrcodeUrl}}" mode='widthFix'></image>
+  <view class='itemo'>
+    <text class='item-left'>预交金笔数</text>
+    <text>{{count}}笔</text>
+  </view>
+  <view class='itemo itemt'>
+    <text class='item-left'>合计金额</text>
+    <text>{{aoumt}}元</text>
+  </view>
+</view>

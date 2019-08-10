@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "首页",
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index",
+    "wxc-dialog": "/../../../UI/wxc-dialog/dist/index",
+    "wxc-badge": "/../../../UI/wxc-badge/dist/index"
+  }
+}

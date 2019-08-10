@@ -1,0 +1,104 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+.radio-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20rpx;
+}
+.check-title{
+  margin-left: 25rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+}
+.check-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.radio {
+  transform: scale(0.7);
+}
+.check-text{
+  font-size: 28rpx;
+}
+.title-img{
+  width: 96%;
+  margin-left: 2%;
+  height: 202rpx;
+}
+.title{
+  margin-bottom: 10rpx;
+  margin-left: 60rpx;
+}
+.body{
+  width: 96%;
+  margin-left: 2%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 0 0 10rpx 10rpx;
+}
+.input-item{
+  width: 94%;
+  margin-left:3%; 
+  margin-top: 20rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1rpx solid #E0E0E0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.icon-input{
+  width: 60rpx;
+   height: 51rpx; 
+}
+.user-input{
+  height: 70rpx;
+  line-height: 70rpx;
+  padding-left: 20rpx;
+  font-size: 28rpx;
+  width: 400rpx;
+}
+.user-picker{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  width: 400rpx;
+}
+.user-pickerB{
+  height: 70rpx;
+  line-height: 70rpx;
+  font-size: 28rpx;
+  width: 400rpx;
+  padding-left: 80rpx;
+  position: absolute;
+  z-index: 10;
+}
+.img-identify{
+  height: 70rpx;
+  width: 160rpx;
+  margin-top: 40rpx;
+  border-radius: 10rpx;
+  background: blue;
+}
+
+.btn-check{
+  width: 94%;
+   margin: 50rpx 3% 70rpx 3%;
+  height: 80rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.hide{
+ display: none;
+}
+.show{ 
+ display: block;
+}

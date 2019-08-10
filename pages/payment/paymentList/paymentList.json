@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "wxc-search": "/../../../UI/wxc-search/dist/index",
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index",
+    "wxc-loadmore": "/../../../UI/wxc-loadmore/dist/index",
+    "wxc-select": "/../../../UI/wxc-selecttwo/dist/index",
+    "wxc-dialog": "/../../../UI/wxc-dialog/dist/index",
+    "wxc-icon": "/../../../UI/wxc-icon/dist/index"
+  },
+  "navigationBarTitleText": "预交金"
+}

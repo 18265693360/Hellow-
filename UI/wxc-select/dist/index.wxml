@@ -1,0 +1,64 @@
+<view class="page">
+  <view class="nav">
+    <view class="nav-son {{shownavindex == 1? 'active' : ''}}" bindtap="showDatepicker" data-nav="1">
+      <view class="content">{{partLeft}}</view>
+      <view class="icon"></view>
+    </view>
+    <view class="nav-son {{shownavindex == 3? 'active' : ''}}" bindtap="listpx" data-nav="3">
+      <view class="content">{{partRight}}</view>
+      <view class="icon"></view>
+    </view>
+  </view>
+  <view wx:if="{{datepicker.showDatePicker}}" class="datepicker-wrap {{leftStatus}} {{leftShow ? 'disappear':''}} flex box box-tb box-align-center">
+    <view class="calendar pink-color box box-tb">
+      <view class="top-handle fs28 box box-lr box-align-center box-pack-center">
+        <view class="prev box box-rl" catchtap="handleCalendar" data-handle="prev">
+          <view class="prev-handle box box-lr box-align-center box-pack-center">{{"<<"}}</view>
+        </view>
+        <view bindtap="chooseYearAndMonth" class="date-area box box-lr box-align-center box-pack-center">
+          <view class='data-border'>{{datepicker.curYear || "--"}} 年 {{datepicker.curMonth || "--"}} 月
+          </view>
+        </view>
+        <view class="next box box-lr" catchtap="handleCalendar" data-handle="next">
+          <view class="next-handle box box-lr box-align-center box-pack-center">{{">>"}}</view>
+        </view>
+      </view>
+      <view wx:if="{{datepicker.weeksCh}}" class="weeks box box-lr box-pack-center box-align-center">
+        <view class="flex week fs28" wx:for="{{datepicker.weeksCh}}" wx:key="{{index}}" data-idx="{{index}}">{{item}}</view>
+      </view>
+      <view class="days box box-lr box-wrap" bindtouchstart="touchstart" bindtouchmove="touchmove">
+        <view wx:if="{{datepicker.empytGrids}}" class="grid disable-day-color  box box-align-center box-pack-center" wx:for="{{datepicker.empytGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="day box box-align-center box-pack-center">{{item}}</view>
+        </view>
+        <view class="grid normal-day-color box box-align-center box-pack-center" wx:for="{{datepicker.days}}" wx:key="{{index}}" data-idx="{{index}}" catchtap="tapDayItem">
+          <view class="day {{item.choosed ? 'border-radius blue-bg' : ''}} box box-align-center box-pack-center">{{item.day}}</view>
+        </view>
+        <view class="grid disable-day-color  box box-align-center box-pack-center" wx:for="{{datepicker.lastEmptyGrids}}" wx:key="{{index}}" data-idx="{{index}}">
+          <view class="day box box-align-center box-pack-center">{{item}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="temp temp2 {{rightStatus}} {{rightShow ? 'disappear':''}}">
+    <view wx:for="{{rightContent}}" data-content="{{item}}" bindtap="rightSelect">
+      {{item}}
+    </view>
+  </view>
+  <view wx:if="{{fullbgShow}}" class="fullbg fullbgs {{isfull ?'fullopacity':''}}" bindtap="hidebg" catchtouchmove="ture">
+  </view>
+</view>
+
+<view wx:if="{{showPicker}}" class="box box-tb foot-picker">
+  <view class="picker-btns box box-lr box-pack-between box-align-center">
+    <view class="picker-btn picker-cancel" data-type="cancel" bindtap="tapPickerBtn">取消</view>
+    <view class="picker-btn picker-confirm" data-type="confirm" bindtap="tapPickerBtn">确定</view>
+  </view>
+  <picker-view class="flex picker-style" indicator-style="height: 50px;" style="width: 100%; height: 150px;" value="{{pickerValue}}" bindchange="pickerChange">
+    <picker-view-column>
+      <view class="picker-view" wx:for="{{pickerYear}}" wx:key="*this" style="line-height: 50px">{{item}}年</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view class="picker-view" wx:for="{{pickerMonth}}" wx:key="*this" style="line-height: 50px">{{item}}月</view>
+    </picker-view-column>
+  </picker-view>
+</view>

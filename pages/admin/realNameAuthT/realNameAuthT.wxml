@@ -1,0 +1,16 @@
+<!--pages/admin/realNameAuthT/realNameAuthT.wxml-->
+<view>
+  <view class='header-tip'><image class='header-img' src='/assests/images/anquan.png'></image>  信息仅用于实名认证，电子票夹保障您的安全</view>
+  <view class='body-name' style='margin-top: 50rpx;'>
+    <text class='body-left'>真实姓名</text>
+    <input class='body-right' disabled value='{{noName}}' bindinput="bindName" ></input>
+  </view>
+  <view class='body-name body-id'>
+    <text class='body-left'>身份证号</text>
+    <input class='body-right' disabled type='idcard' value='{{noId}}' bindinput='bindNo'  cursor-spacing='50'></input>
+    <!-- <view class='imageBtn'><image bindtap='ocr' class='body-name-img'  src='/assests/images/shexiangtou.png'></image></view> -->
+  </view>
+
+ <button bindtap="checkTap" class="btn-check" disabled="{{btnDisable}}" loading="{{btnLoading}}">确认</button> 
+ <button bindtap="ocr" class="btn-receive" >重新拍照识别</button> 
+</view>

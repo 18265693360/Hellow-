@@ -1,0 +1,15 @@
+<!--pages/firstPage/firstPage.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view>
+  <image class='title-img' src='/assests/images/back-2.png  '></image>
+ 
+  <button form-type="submit" class='loginBtnStyle' disabled = "{{isDisable}}" loading="{{isLoading}}" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">微信用户快速登录</button>
+   <button class='tologinBtnStyle' bindtap='jumpRegiste'>手机号注册/登录</button>
+
+  <!-- <view bindtap='jumpRegiste'>手机号注册/登录</view> -->
+
+ <view class='footer'>
+  <text>登录即表示，您已阅读并同意</text>
+  <text class='footerA' bindtap='jumpAgreement'>《用户注册协议》</text>
+ </view>
+</view>

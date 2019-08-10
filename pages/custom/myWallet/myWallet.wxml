@@ -1,0 +1,70 @@
+<!--pages/custom/myWallet/myWallet.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}"></wxc-dialog>
+  <view class="topTip" wx:if='{{isTips}}' bindtap="jumpTip">
+        <image class="topTipImg" src="/assests/images/icon-horn.png"/>
+        <view class="wrap">{{tips}}    
+        </view>
+        <image class="topTipR" src="/assests/images/icon-arrow-r.png" />
+    </view>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<view class='headback'>
+  <view class='headS' bindtap='getFocus'>
+    <image mode='widthFix' class='searchT' src='/assests/images/searchT.png'></image>
+    <input class='searchI' bindblur='searchD' placeholder-class="pl" bindinput='searchN' confirm-type='search' focus='{{isfocus}}' placeholder='交款人/身份证号/票据号码搜索' value='{{searchInputValue}}'></input>
+  </view>
+</view>
+<wxc-select class="select--{{selectStatus}}" partLeft="开票日期" partCenter="" partRight="票据状态" centerContent="{{centerContent}}" rightContent="{{rightContent}}" catchshowDatepicker="filterPattern" catchhidebg="filterPattern" catchlistRight="filterPattern"
+  catchtapDay="tapDayTap" curYear="{{curYear}}" curMonth="{{curMonth}}" curDate="{{curDate}}" catchrightSelect="rightSelect">
+</wxc-select>
+<view wx:if="{{filterStatus}}" class='filterCard'>
+  <view class='fliterFiexd'>
+    <view class='filterTitle'>全部结果>></view>
+    <view wx:if="{{dateFilterStatus}}" class='fliterItem' catchtap='cancelDateFilter'>
+      <view class='filterContent'>{{dateFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+    <view wx:if="{{statusFilterStatus}}" class='fliterItem' catchtap='cancelStatusFilter'>
+      <view class='filterContent'>{{statusFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+    <view wx:if="{{nameFilterStatus}}" class='fliterItem' catchtap='cancelNameFilter'>
+      <view class='filterContent'>{{nameFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+  </view>
+</view>
+
+<!-- <view bindtap='jumpGetInvoive' class='font-22 abnor-{{getTip}}'>未归集到票据，去试试
+  <text class='blue'>自助取票</text>！</view> -->
+<view class='container'>
+  <block wx:for="{{result}}" wx:key="{{index}}">
+    <view class='eInvoice' bindtap='toDetail' data-result='{{item}}'>
+      <view class='item-title'>
+        <view class='title-type'>
+          <image class='type-img' src='/assests/images/icon-eInvoice-content.png'></image>
+          <view class='type-text'>{{item.invoicingPartyName}}</view>
+        </view>
+        <view class='title-date'>{{item.issueDate}}</view>
+      </view>
+      <view >
+        <view class='unitName'>交款人： {{item.payerPartyName}} <image src='{{item.isStatus}}' class="itemImg " mode='widthFix'></image></view>
+        <view class='code'>票据号码：{{item.eInvoiceNumber}}
+          </view>
+        <view class='item-content'>
+          <view class='code'>备注：{{item.remark}}
+          </view>
+          <view class='amount'>
+            ￥{{item.totalAmount}}
+          </view>
+        </view>
+
+
+      </view>
+    </view>
+  </block>
+  <!-- <view class='block'></view> -->
+  <wxc-loadmore is-end="{{true}}" text="已加载全部票据" class="isLoadmore{{isLoadmore?'':'hide'}}"></wxc-loadmore>
+
+</view>

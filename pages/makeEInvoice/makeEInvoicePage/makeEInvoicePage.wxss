@@ -1,0 +1,144 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 150rpx;
+}
+
+.title-text {
+  width: 100%;
+  margin: 20rpx 0 20rpx 20rpx;
+  font-size: 28rpx;
+  color: #666;
+}
+
+.invoice-type {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.type-body {
+  width: 100%;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.type-label {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.label-body {
+  width: 280rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4rpx solid #4e60df;
+  margin: 20rpx 0 20rpx 0;
+  border-radius: 5rpx;
+}
+
+.label-title {
+  font-size: 28rpx;
+  margin-top: 10rpx;
+  margin-bottom: 10rpx;
+  color: #4e60df;
+}
+
+.label-text {
+  font-size: 24rpx;
+  margin-bottom: 10rpx;
+  color: #4e60df;
+}
+.notice{
+  font-size: 28rpx;
+  color: #999999;
+  margin-bottom: 20rpx;
+}
+.detail-body{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+}
+
+.detail-item{
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #d1d4e8;
+}
+.item-title{
+  width: 20%;
+  margin-left: 30rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+}
+.item-info{
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 28rpx;
+}
+.radio-group{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.check-item{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20rpx;
+}
+.radio {
+  transform: scale(0.6);
+}
+.item-input{
+  width: 100%;
+  height: 100%;
+  padding-left: 30rpx;
+  font-size: 28rpx;
+}
+.icon-arrow{
+  width: 50rpx;
+  height: 50rpx;
+  margin-right: 30rpx;
+}
+.detail-amount{
+  margin-left: 30rpx;
+  color: #fa9655;
+}
+.receive-body{
+    width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1rpx solid #d1d4e8;
+  background: #fff;
+}
+.foot{
+  width: 100%;
+  background: #eaedf2;
+  position: fixed;
+  bottom: 0;
+  height: 140rpx;
+  z-index: 3;
+}
+.btn-submission{
+  width: 96%;
+  margin-left: 2%;
+  margin-top: 30rpx;
+  height: 80rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}

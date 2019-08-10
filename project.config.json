@@ -1,0 +1,109 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.7.1",
+	"appid": "wx8e0b79a7f627ca18",
+	"projectname": "%E4%B8%AA%E4%BA%BA%E6%AD%A3%E5%BC%8F%E7%89%883",
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 2,
+			"list": [
+				{
+					"id": 0,
+					"name": "firstpage",
+					"pathName": "pages/bl/bl",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": 1,
+					"name": "2",
+					"pathName": "pages/customCompany/customCompany",
+					"query": "",
+					"scene": 1011
+				},
+				{
+					"id": 2,
+					"name": "我的票据",
+					"pathName": "pages/myEinvoiceWallet/myEinvoiceWallet",
+					"query": "agencyId=02a60bf9630e410ab1baa03e8888141c",
+					"scene": 1011
+				},
+				{
+					"id": 3,
+					"name": "hospital",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": 4,
+					"name": "123",
+					"pathName": "pages/getInvoiceSuccess/getInvoiceSuccess",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "123",
+					"pathName": "pages/eInvoiceList/eInvoiceList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "page",
+					"pathName": "pages/makeEInvoice/makeEInvoicePage/makeEInvoicePage",
+					"query": ""
+				},
+				{
+					"id": 7,
+					"name": "模拟更新",
+					"pathName": "pages/home/home",
+					"query": ""
+				},
+				{
+					"id": 8,
+					"name": "city",
+					"pathName": "pages/citys/citys",
+					"query": "",
+					"scene": "1011"
+				},
+				{
+					"id": 9,
+					"name": "首次进入小程序传参",
+					"pathName": "pages/home/home",
+					"query": "name=2222&jdsbcbdsb=sdkbksdb&zhang=张博一",
+					"scene": 1043,
+					"referrerInfo": {
+						"appId": "appid111111111111"
+					}
+				}
+			]
+		}
+	}
+}

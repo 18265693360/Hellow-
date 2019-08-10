@@ -1,0 +1,46 @@
+/* pages/billSuccess/billSuccess.wxss */
+page{
+  background-color: #ffffff;
+  text-align: center;
+ 
+  
+}
+
+.img{
+  width: 168rpx;
+  margin-top:126rpx;
+
+}
+.btn-archive {
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  margin-top: 70rpx;
+  color: #fff;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  font-size: 28rpx;
+  line-height: 70rpx;
+}
+.tip{
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.tip3{
+  font-size: 26rpx;
+  color: #b1b1b1;
+  margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+.gray{
+  background-color: #f4f6fa;
+  color: #3f3f3f;
+  font-size: 28rpx;
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  margin-top: 30rpx;
+  line-height: 80rpx;
+  border: 1rpx solid #e8e8e8;
+  text-align: center;
+
+}

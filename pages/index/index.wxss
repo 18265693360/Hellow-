@@ -1,0 +1,54 @@
+/* pages/custom/customIndex/cusomIndex.wxss */
+page{
+  background-color: #fff;
+}
+.f28{
+  font-size: 28rpx;
+  color: #999999;
+}
+.f34{
+  font-size: 34rpx;
+}
+.f30{
+  font-size: 30rpx;
+}
+.border{
+  margin: 25rpx 35rpx 0;
+  border: 1rpx solid #d8d8d8;
+}
+.flex{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 40rpx;
+}
+
+.flex-con{
+  flex: 1;
+  margin-left: 10rpx
+}
+
+.loginBtn{
+  color: #575fd6;
+  font-size: 32rpx;
+}
+.title{
+  line-height: 85rpx;
+  border-bottom: none;
+  padding-left: 40rpx;
+}
+.flex-pad{
+  padding: 40rpx 0;
+  margin: 0 40rpx;
+  border-bottom: 1rpx solid #d8d8d8;
+}
+
+.navigator{
+  color: #575fd6;
+}
+.footer{
+  text-align:center;
+width:100%;
+line-height:46rpx;
+margin-top: 40rpx;
+}

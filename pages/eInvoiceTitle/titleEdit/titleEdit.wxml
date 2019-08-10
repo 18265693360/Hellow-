@@ -1,0 +1,56 @@
+ <wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view class='container'>
+<radio-group class="radio-group" bindchange="radioChange">
+      <view class='check-title'>抬头类型：</view>
+        <label>
+          <view class='check-item'>
+            <radio class='radio' checked="{{partyCheck}}" value="0" />
+            <view class='check-text'>企业单位</view>
+          </view>
+        </label>
+        <label>
+          <view class='check-item'>
+            <radio class='radio' checked="{{personalCheck}}" value="1" />
+            <view class='check-text'>个人/非企业单位</view>
+          </view>
+        </label>
+      
+      </radio-group>
+  <view class='item'>
+      <view class='title'>
+        名称
+      </view>
+      <input class='content-input' bindinput="partyNameInput" placeholder-class="psection" type="text" value="{{parameters.partyName || ''}}" placeholder="请输入票据抬头名称（必填）"/>
+  </view>
+  <view class='item'>
+      <view class='title'>
+        税号
+      </view>
+      <input class='content-input' bindinput="taxNumberInput" placeholder-class="psection" type="text" value="{{parameters.taxNumber || ''}}" maxlength="20" placeholder="15-20位（企业报销时必填）"/>
+  </view>
+  <view class='item'>
+      <view class='title'>
+        单位地址
+      </view>
+      <input class='content-input' bindinput="partyAddressInput" placeholder-class="psection" type="text" value="{{parameters.partyAddress || ''}}" placeholder="公司地址"/>
+  </view>
+  <view class='item'>
+      <view class='title'>
+        电话号码
+      </view>
+      <input class='content-input' bindinput="phoneNumberInput" placeholder-class="psection"  value="{{parameters.phoneNumber || ''}}" maxlength="12" placeholder="公司电话"/>
+  </view>
+  <view class='item'>
+      <view class='title'>
+        开户银行
+      </view>
+      <input class='content-input'  bindinput="bankOpenInput" placeholder-class="psection" type="text" value="{{parameters.bankOpen || ''}}" placeholder="开户银行"/>
+  </view>
+  <view class='item_noBorder'>
+      <view class='title'>
+        银行账户
+      </view>
+      <input class='content-input' bindinput="bankAccountInput" placeholder-class="psection" type='number' value="{{parameters.bankAccount || ''}}" maxlength="30" placeholder="银行账户"/>
+  </view>
+</view>
+<button bindtap="saveTap" class="btn-save" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{parameters.btnDisable}}" loading="{{btnLoading}}">保存</button> 

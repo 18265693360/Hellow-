@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "选择开票单位",
+  "usingComponents": {
+    "wxc-toast": "../../UI/wxc-toast/dist/index"
+  }
+}

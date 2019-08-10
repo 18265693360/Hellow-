@@ -1,0 +1,12 @@
+<!--pages/statusSuccess/statusSuccess.wxml-->
+<view>
+  <view>
+    <image mode='widthFix'  class='img' src='../../assests/images/tijiaochenggong.png' > </image>
+  </view>
+  <view class='tip' >业务办理成功</view>
+  <view class='tip3'>如有疑问请联系工作人员</view>
+   
+    <button class='gray' bindtap="jumpList">
+      <text>关闭</text>
+    </button>
+</view>

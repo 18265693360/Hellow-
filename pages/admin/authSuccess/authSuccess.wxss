@@ -1,0 +1,43 @@
+/* pages/admin/authSuccess/authSuccess.wxss */
+.header-tip{
+  color: #868686;
+  font-size: 26rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  background-color: #feffef;
+  border-bottom:1rpx solid #dadbdc;
+  border-top:1rpx solid #dadbdc;
+  padding-left: 90rpx;
+}
+.header-img{
+  width:26rpx;
+height:30rpx;
+position:relative;
+top:7rpx;
+}
+.body-img{
+  width: 245rpx;
+  height: 254rpx;
+  display:block;
+margin:77rpx auto 58rpx;
+}
+
+.btn-check{
+  width: 88%;
+  margin: 80rpx auto 0; 
+  height: 80rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.body-content{
+  font-size: 40rpx;
+  text-align: center;
+}
+.body-tip{
+  font-size: 26rpx;
+  color: #6d6d6d;
+  text-align: center;
+  margin-top: 31rpx;
+}

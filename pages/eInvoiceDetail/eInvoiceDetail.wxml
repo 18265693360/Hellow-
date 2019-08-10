@@ -1,0 +1,32 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <view class='email-info input-{{inputStatus}}'>
+    <input name="email" bindinput="emailInput" class="email-input" placeholder-class="psection" type="text" value="{{sentToEmail}}" placeholder="{{placeH}}" cursor-spacing='100' />
+  </view>
+</wxc-dialog>
+<wxc-popup class="J_Popup">
+  <view class='popup__content'>
+    <canvas class='canvas' canvas-id='canvas' ></canvas>
+  </view>
+</wxc-popup>
+<view class="container container-{{containerStatus}}">
+  <image class="bill-image" mode='widthFix' src="{{imgUrl}}"></image>
+  <image wx:if="{{reiStatus}}" class='reiImage' mode='widthFix' src='{{reiUrl}}'></image>
+  <view class='options'>
+   <button class='btn-receive archive-{{unArchiveStatusSend}}' bindtap="sentToOther">
+      <text>发送给他人</text>
+    </button>
+    <button class='btn-receive' wx:if="{{isSendEmail}}"  bindtap="sentToEmailTap">
+      <text>发送至邮箱</text>
+    </button>
+   <button class='btn-archive' wx:if="{{isCollect}}"   bindtap="collectInvoice">
+      <text>保存至票夹</text>
+    </button>
+    <button  class='btn-archive archive-{{unArchiveStatus}}'  bindtap="showPopup">
+      <text>显示二维码</text>
+    </button>
+  </view>
+  
+  <view class='foot-text'>电子票据展示由博思软件提供技术支持</view>
+</view>

@@ -1,0 +1,10 @@
+<!--pages/getInvoiceSuccess/getInvoiceSuccess.wxml-->
+<view>
+   
+   <image class='body-img' src='/assests/images/samile.png'></image>
+   <view class='body-content'>{{title}}</view>
+   <view wx:if="{{isShow}}" class='body-tip'>成功接收<text>{{num}}</text>张票据，已自动保存至票夹</view>
+   <view wx:if="{{!isShow}}" class='body-tip'>票据已自动保存至票夹，请前往查看！</view>
+    <button bindtap="checkTaps" class="btn-check">前往票夹查看</button> 
+</view>
+

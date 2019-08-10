@@ -1,0 +1,39 @@
+/* pages/firstPage/firstPage.wxss */
+view{
+  text-align: center;
+  font-size: 32rpx;
+}
+.title-img {
+  width: 97%;
+  height: 320rpx;
+  margin-top: 5rpx;
+  margin-left: 1.5%;
+}
+.tologinBtnStyle , .loginBtnStyle{
+  width:75%;
+  margin:60rpx auto 40rpx;
+  height:90rpx;
+  line-height:90rpx;
+  border-radius:45rpx;
+  font-size: 32rpx;
+}
+.loginBtnStyle{
+ background-color:green;
+ color:#fff;
+}
+.tologinBtnStyle{
+  border: 1px solid green
+}
+.footer{
+  position: absolute;
+  bottom: 80rpx;
+  width: 100%;
+  color: #656565;
+  
+}
+.footer text{
+  font-size: 26rpx;
+}
+.footerA{
+  color: #485adc;
+}

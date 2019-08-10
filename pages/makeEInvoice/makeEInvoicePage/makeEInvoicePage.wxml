@@ -1,0 +1,80 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<!-- <wxc-dialog class="wxc-dialog" title="申请开票成功！" content="" confirm-text="确定" bindconfirm="onConfirm" bindcancel="onCancel"></wxc-dialog> -->
+<view class='container'>
+  <view class='invoice-type'>
+    <view class='title-text'>开具发票类型</view>
+    <view class='type-body'>
+      <view class='type-label'>
+        <view class='label-body'>
+          <view class='label-title'>电子发票</view>
+          <view class='label-text'>最快2分钟开具</view>
+        </view>
+      </view>
+      <view class='notice'>电子发票与纸质发票具有同等法律效力，可支持报销入账</view>
+    </view>
+  </view>
+  <view class='invoice-detail'>
+    <view class='title-text'>发票详情</view>
+    <view class='detail-body'>
+      <view class='detail-item'>
+        <view class='item-title'>抬头类型</view>
+        <view class='item-info'>
+          <radio-group class="radio-group" bindchange="radioChange">
+            <view class='check-item'>
+              <radio class='radio' checked="{{partyCheck}}" value="企业单位" />
+              <view class='check-text'>企业单位</view>
+            </view>
+            <view class='check-item'>
+              <radio class='radio' checked="{{personalCheck}}" value="个人/非企业单位" />
+              <view class='check-text'>个人/非企业单位</view>
+            </view>
+          </radio-group>
+        </view>
+      </view>
+      <view class='detail-item'>
+        <view class='item-title'>发票抬头</view>
+        <view class='item-info'>
+          <input bindinput="titleNameInput" class="item-input" placeholder-class="psection" type="text" value="{{parameters.titleName}}" placeholder="填写发票抬头或者选择" />
+          <picker bindchange="bindPickerChange" value="{{index}}" range="{{titleList}}" range-key="partyName">
+            <image class='icon-arrow' src='/assests/images/icon-arrow-select.png'></image>
+          </picker>
+        </view>
+      </view>
+      <view wx:if="{{partyCheck}}" class='detail-item'>
+        <view class='item-title'>税号</view>
+        <view class='item-info'>
+          <input bindinput="taxNumberInput" class="item-input" placeholder-class="psection" type="text" value="{{parameters.taxNumber}}" placeholder="填写纳税人识别号" />
+        </view>
+      </view>
+      <!-- <view class='detail-item'>
+        <view class='item-title'>发票内容</view>
+        <view class='item-info'>
+          <input bindinput="invoiceContentInput" class="item-input" placeholder-class="psection" type="text" value="{{parameters.invoiceContent}}" placeholder="填写开票内容类型" />
+        </view>
+      </view> -->
+      <view class='detail-item'>
+        <view class='item-title'>发票金额</view>
+        <view class='item-info'>
+          <view class='detail-amount'>{{parameters.invoiceAmount}}</view>
+          <view>元</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='invoice-receive'>
+    <view class='title-text'>接收方式</view>
+    <view class='receive-body'>
+      <view class='item-title'>电子邮件</view>
+      <view class='item-info'>
+        <input bindinput="emailInput" class="item-input" placeholder-class="psection" type="text" value="{{parameters.email}}" placeholder="用于向您发送电子发票" />
+      </view>
+    </view>
+  </view> -->
+</view>
+<view class='foot'>
+<!----------------------------------------------------------------- -->
+  <form bindsubmit="submissionTap" report-submit="true">
+  <button form-type="submit" class="btn-submission" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">提交</button>
+  </form>
+<!----------------------------------------------------------------- -->
+</view>

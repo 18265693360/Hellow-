@@ -1,0 +1,77 @@
+/* pages/paymentHistory/paymentHistory.wxss */
+page text{
+  font-size: 26rpx;
+}
+.item{
+  margin-top: 10rpx;
+  background-color: #ffffff;
+  padding: 10rpx 10rpx 40rpx;
+}
+.item-title{
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #dbddec;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+}
+.item-date{
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #474747;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.item-r{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  background-color: #f4f6fa;
+  border: 1rpx solid #c9cbd8;
+  border-radius: 10rpx;
+  height: 135rpx;
+  margin-top: 20rpx;
+}
+.item-r-img{
+  width: 30rpx;
+
+}
+.item-r-con{
+  font-size: 26rpx;
+  width: 300rpx;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15rpx;
+}
+.item-r-right{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.item-r-status{
+  font-size: 30rpx;
+  color: #fc9153;
+}
+.item-r-yuan{
+  color: #666666;
+  font-size: 24rpx;
+}
+.item-r-money{
+  font-size: 44rpx;
+}
+.item-date-s{
+  color: #666666;
+}
+.blueC{
+  color: #495bdd;
+}
+.abnor-hide {
+  display: none;
+}
+.isLoadmorehide{
+  display: none;
+}

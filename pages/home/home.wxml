@@ -1,0 +1,74 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view class='header'>
+  <view class='function'>
+    <image class='title-img' src='/assests/images/home-header.png'></image>
+    <view class='img-title'>发票服务</view>
+  </view>
+  <view class='options'>
+    <view class='option' bindtap="scanCodeTap">
+      <image class='option-icon' src='/assests/images/icon-scan.png' mode='widthFix'></image>
+      <view class='option-text'>扫码查票</view>
+    </view>
+    <view class='option' bindtap='{{buttonClicked1?"eInvoiceTap":""}}'>
+      <image class='option-icon' src='/assests/images/icon-editHome.png' mode='widthFix'></image>
+      <view class='option-text'>手工查票</view>
+    </view>
+     <!--<view class='option' bindtap='{{buttonClicked2?"checkTap":""}}'>
+      <image class='option-icon' src='/assests/images/icon-paper.png' mode='widthFix'></image>
+      <view class='option-text'>自助取票</view>
+    </view>
+    <view class='option' bindtap='{{buttonClicked3?"makeEinvoiceTap":""}}'>
+      <image class='option-icon' src='/assests/images/icon-makeInvoice.png' mode='widthFix'></image>
+      <view class='option-text'>自助开票</view>
+    </view> -->
+   
+    <view class='option' bindtap='{{buttonClicked4?"payment":""}}'>
+      <image class='option-icon' src='/assests/images/icon-money.png' mode='widthFix'></image>
+      <view class='option-text'>预交金</view>
+    </view>
+     <view class='option' bindtap='{{buttonClicked5?"reimbursement":""}}'>
+      <image class='option-icon' src='/assests/images/icon-reim.png' mode='widthFix'></image>
+      <view class='option-text'>发票报销</view>
+    </view>
+  </view>
+  <image class='bg-header_foot' src='/assests/images/bg_foot.png'></image>
+</view>
+
+<view class='content'>
+  <view class='content-top flex'>
+    <view style='color:#999999;padding-left:20rpx;'> 
+      <text >单位专属服务</text> 
+      快来抢先体验吧
+    </view>
+    <view style='color:#4e5fdd;' bindtap='jumpMoreCompany'>更多</view>
+  </view>
+  <view class='flex'>
+    <view class='flex content-item' wx:for='{{relationCompanyArr}}' wx:key='{{index}}' data-id='{{item.agencyId}}' bindtap='jumpCustomIndex'>
+      <view>{{item.agencyName}}</view>
+
+        <image class='rad' src='{{item.minLogo}}'  mode='widthFix'></image>
+
+      
+    </view>
+    <view class='flex content-item {{isMore?"":"abnor-hide"}}'>
+      <view>更多单位开通中...</view>
+      <image src='/assests/images/moreC.png' style='width:94rpx;' mode='widthFix'></image>
+    </view>
+  </view>
+</view>
+
+<view class='body'>
+  <view class='foot'>
+    <image class='horn-img' src='/assests/images/icon-horn.png'></image>
+    <view class='foot-text'> 可帮您自动归集票据，去票夹看看吧!</view>
+  </view>
+  <image class='icon-avatar' src='/assests/images/icon-avatar-mine.png'></image>
+  <!-- <button wx:if="{{ifAvatarUrl}}" class='btn-userInfo' open-type="getUserInfo" lang="zh_CN" bindgetuserinfo="onGotUserInfo"></button>   -->
+  <view class='login-text'>{{userPhone}}</view>
+  <view wx:if="{{!footerTip}}" class='footer-tip' bindtap='jumpFirstPage'>您好，注册登录可使用全部功能哦
+    <image src='/assests/images/rightTriangle.png' class='tubiao'></image>
+  </view>
+  <view wx:if="{{footerTip}}" class='footer-tip' bindtap='jumpAuth'>{{footerText}}
+    <image src='/assests/images/rightTriangle.png' class='tubiao'></image>
+  </view>
+</view>

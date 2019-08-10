@@ -1,0 +1,31 @@
+<!--pages/payment/refundDetail/refundDetail.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view>
+  <view class='titleo'>预交金缴费凭证</view>
+  <view class='img'>
+    <image mode='widthFix' src="data:image/jpeg;base64,{{qrcodeUrl}}"></image>
+  </view>
+  <view class='titleo'>结算信息</view>
+  <view class='itemList'>
+    <view class='item'>
+      <text class='item-l'>办理状态</text>
+      <text>{{dataList.voucherStatus}}</text>
+    </view>
+    <view class='item'>
+      <text class='item-l'>办理时间</text>
+      <text>{{dataList.finishDate}}</text>
+    </view>
+    <view class='item'>
+      <text class='item-l'>支付方式</text>
+      <text>{{dataList.payMethod}}</text>
+    </view>
+    <view class='item'>
+      <text class='item-l'>金额</text>
+      <text>{{dataList.amount}}元</text>
+    </view>
+    <view class='item'>
+      <text class='item-l'>凭证编号</text>
+      <text>{{dataList.voucherNumber}}</text>
+    </view>
+  </view>
+</view>

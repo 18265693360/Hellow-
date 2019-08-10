@@ -1,0 +1,5 @@
+<!--pages/admin/shouquan/shouquan.wxml-->
+<view class='item'>
+  <text>报销单位票据获取</text>
+  <switch></switch>
+</view>

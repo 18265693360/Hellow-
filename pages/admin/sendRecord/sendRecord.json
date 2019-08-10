@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "发送记录",
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index",
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index",
+    "wxc-loadmore": "/../../../UI/wxc-loadmore/dist/index"
+  }
+}

@@ -1,0 +1,54 @@
+<!--pages/admin/sendRecord/sendRecord.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<view class='headback'>
+  <view class='headS' bindtap='getFocus'>
+    <image mode='widthFix' class='searchT' src='../../../assests/images/searchT.png'></image>
+    <input class='searchI' bindblur='searchD' placeholder-class="pl" bindinput='searchN' confirm-type='search' focus='{{isfocus}}' placeholder='按接收人手机号码搜索' value='{{searchInputValue}}'></input>
+  </view>
+</view>
+<view>
+  <!-- wx:for='{{dataList}}' wx:key='{{index}}'  -->
+  <view class='item' id='sdfsf' wx:for='{{dataList}}' wx:key='{{index}}'>
+    <view class='item-content '>
+      <view class='item-titles'>
+        <image src='/assests/images/shouji.png' mode='widthFix' style='width:20rpx;margin-right:10rpx;'></image>{{item.sharePhone}}</view>
+      <view class='item-titles' style='text-align:right;'>发送共
+        <text class='blue'>{{item.totalCount}}</text> 张</view>
+    </view>
+    <view>
+      <!--  -->
+      <view class='item-r' wx:for='{{item.list}}'   wx:for-item='itemlist'  wx:key='{{idx}}'>
+        <view class='eInvoice'>
+          <view class='item-title'>
+            <view class='title-type'>
+              <image class='type-img' src='/assests/images/icon-eInvoice-content-s.png'></image>
+              <view class='type-text'>{{itemlist.invoicingPartyName}}</view>
+            </view>
+            <view class='title-date'>{{itemlist.issueDate}}</view>
+          </view>
+          <view>
+            <view class='item-content'>
+              <view class='unitName'>交款人： {{itemlist.payerPartyName}} </view>
+              <view class='unitName blue'>发送日期： {{itemlist.insertTime}} </view>
+            </view>
+
+
+            <view class='item-content'>
+              <view class='code'>备注：{{itemlist.remark}}
+              </view>
+              <view class='amount'>
+                ￥{{itemlist.totalAmount}}
+              </view>
+            </view>
+
+
+          </view>
+        </view>
+
+      </view>
+
+    </view>
+  </view>
+</view>
+<wxc-loadmore is-end="{{true}}" text="已加载全部发送记录" class="isLoadmore{{isLoadmore?'':'hide'}}"></wxc-loadmore>

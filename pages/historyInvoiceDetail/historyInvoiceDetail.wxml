@@ -1,0 +1,32 @@
+<!--pages/historyInvoiceDetail/historyInvoiceDetail.wxml-->
+<view>
+  <view class='header' bindtap='jumpP'>
+    <view class='colorB font28'><text>电子发票 {{datas.issueInvoiceStatus}}</text>
+    </view>
+    <view class='colorG font26'><text>{{datas.requestTime}}</text></view>
+    <image class='right' wx:if="{{isShow}}" src='../../assests/images/icon-arrow-r.png' mode='aspectFit'></image>
+  </view>
+  <view class='infoHrader'><text>发票信息</text></view>
+  <view>
+    <view class='infoContent-item'> 
+      <view class='colorG font28 fleft lab'><text>发票抬头</text></view>
+      <view class='colorB font26 fleft tex'><text>{{datas.buyerName}}</text></view>
+    </view>
+    <view class='infoContent-item'> 
+      <view class='colorG font28 fleft lab'><text>税号</text></view>
+      <view class='colorB font26 fleft tex'><text>{{datas.buyerTax}}</text></view>
+    </view>
+    <!-- <view class='infoContent-item'> 
+      <view class='colorG font28 fleft lab'><text>发票内容</text></view>
+      <view class='colorB font26 fleft tex'><text>周瑜快递费卡夫卡机东方斯卡拉腹肌啊开发了司法</text></view>
+    </view> -->
+    <view class='infoContent-item'> 
+      <view class='colorG font28 fleft lab'><text>发票金额</text></view>
+      <view class='colorB font26 fleft tex'><text>{{datas.amount}} 元</text></view>
+    </view>
+    <view class='infoContent-item itemLaster'> 
+      <view class='colorG font28 fleft lab'><text>申请时间</text></view>
+      <view class='colorB font26 fleft tex'><text>{{datas.requestTime}}</text></view>
+    </view>
+  </view>
+</view>

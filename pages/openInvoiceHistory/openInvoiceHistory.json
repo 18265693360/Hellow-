@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "开票历史",
+  "usingComponents": {
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index"
+  }
+}

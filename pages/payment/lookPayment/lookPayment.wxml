@@ -1,0 +1,9 @@
+<!--pages/payment/lookPayment/lookPayment.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+
+ <view class='img'>
+    <image mode='widthFix' src="data:image/jpeg;base64,{{imgUrl}}"></image>
+</view> 
+<view class='foot-text'>电子票据展示由博思软件提供技术支持</view>
+
+  

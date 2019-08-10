@@ -1,0 +1,14 @@
+/* pages/admin/agreement/agreement.wxss */
+page{
+  background: #fff;
+}
+.title{
+  text-align: center;
+  margin-top: 20rpx;
+}
+.content{
+  margin-bottom: 60rpx;
+}
+.container{
+  padding: 0 20px;
+}

@@ -1,0 +1,85 @@
+<!--pages/payment/paymentallData/paymentallData.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-popup class="J_Popup">
+  <view class='popup__content'>
+    <image src="data:image/jpeg;base64,{{qrcodeUrl}}" mode='widthFix'></image>
+  </view>
+</wxc-popup>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <view class='email-info input-{{inputStatus}}'>
+    <input name="email" bindinput="emailInput" class="email-input" placeholder-class="psection" type="text" value="{{sentToEmail}}" cursor-spacing='100' placeholder="{{placeH}}" />
+  </view>
+</wxc-dialog>
+
+<view class='pad'>
+  <view class='new-con top20'>
+    <view class='img'>
+      <image class='imageB' mode='widthFix' src='/assests/images/invoiceB.png'> </image>
+    </view>
+    <view class='new-title'>住院预交金凭证</view>
+    <view class='new-up'>
+      <view class='content-item'>
+        <view class='new-up-left'>开票单位</view>
+        <view class='new-up-right'>{{allData.agencyName}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>凭证代码</view>
+        <view class='new-up-right'>{{allData.voucherCode}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>凭证号码</view>
+        <view class='new-up-right'>{{allData.voucherNumber}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>付款方式</view>
+        <view class='new-up-right'>{{allData.payMethod}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>开票日期</view>
+        <view class='new-up-right'>{{allData.issueDate}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>交款人</view>
+        <view class='new-up-right'>{{allData.payerName}} </view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>金额合计</view>
+        <view class='new-up-right'>{{allData.amount}}元</view>
+      </view>
+    </view>
+  </view>
+  <view class='new-con'>
+    <view class='img'>
+      <image class='imageB' mode='widthFix' src='/assests/images/item.png'> </image>
+    </view>
+    <view class='content-item tips'>
+      <view class='new-up-left'>备注</view>
+      <view class='new-up-right'>{{detail.payerPartyName}} </view>
+    </view>
+  </view>
+
+  <view class='new-con'>
+    <view class='newBtn'>
+      <!-- <view class='new-item' bindtap="{{buttonClicked?'lookInvoice':''}}">
+        <view>查看电子凭证</view>
+        <view style='color:#9a9a9a;font-size:26rpx;'>
+          <image class='new-right' mode='widthFix' src='/assests/images/icon-arrow-r.png'></image>
+        </view>
+      </view> -->
+      <form bindsubmit="{{buttonClickedTwo?'showPopup':''}}" report-submit='true'>
+        <button class='hide' form-type="submit">
+        </button>
+      </form>
+      <view class='new-item'>
+        <view>显示二维码</view>
+        <view style='color:#9a9a9a;font-size:26rpx;'>
+          <image class='new-right' mode='widthFix' src='/assests/images/icon-arrow-r.png'></image>
+        </view>
+      </view>
+
+
+    </view>
+
+  </view>
+</view>

@@ -1,0 +1,56 @@
+<!--pages/custom/customIndex/cusomIndex.wxml-->
+<view>
+  <view>
+    <image style="width:100%;height:auto;" mode='widthFix' src="{{logoUrl}}"></image>
+  </view>
+  <view class='border'>
+    <view class='flex' style="line-height:110rpx;">
+      <image mode='widthFix' style="width:80rpx;margin-top: 15rpx;" src='/assests/images/custom-02.png'></image>
+      <view class='f30 flex-con'>{{userPhone}}</view>
+      <view class='loginBtn' bindtap='loginOrQuiet'>{{loginText}}</view>
+    </view>
+  </view>
+  <view class='border f28 title'>票据服务</view>
+  <view class='border' style='margin-top:0;'>
+
+      <view class='flex flex-pad' bindtap='jumpGetInvoice'>
+        <image mode='widthFix' style='width:100rpx;margin-top:-9rpx;' src='/assests/images/custom-04.png'></image>
+        <view class='flex-con'>
+          <view class='f34'>自助取票</view>
+          <view class='f28'>可根据个人信息自助获取电子票据</view>
+        </view>
+        <image mode='widthFix' style='width:20rpx;margin-top:32rpx;' src='/assests/images/icon-arrow-r.png'></image>
+      </view>
+
+
+      <view class='flex flex-pad' bindtap='jumpMyWallet'>
+        <image mode='widthFix' style='width:100rpx;margin-top:-9rpx;' src='/assests/images/custom-03.png'></image>
+        <view class='flex-con'>
+          <view class='f34'>我的票夹</view>
+          <view class='f28'>可查看归集的电子票据</view>
+        </view>
+        <image mode='widthFix' style='width:20rpx;margin-top:32rpx;' src='/assests/images/icon-arrow-r.png'></image>
+      </view>
+
+
+      <view class='flex flex-pad' style='border-bottom: none;' bindtap='jumpSend'>
+        <image mode='widthFix' style='width:100rpx;margin-top:-9rpx;' src='/assests/images/custom-05.png'></image>
+        <view class='flex-con' >
+          <view class='f34'>发送记录</view>
+          <view class='f28'>发送给他人的电子票据记录</view>
+        </view>
+        <image mode='widthFix' style='width:20rpx;margin-top:32rpx;' src='/assests/images/icon-arrow-r.png'></image>
+      </view>
+
+
+  </view>
+
+  <view class='f28 footer'>
+    <navigator class='navigator' url="/pages/admin/agreement/agreement">
+      用户协议
+    </navigator>
+
+    <view>福建博思软件股份有限公司</view>
+    <view>提供技术支持</view>
+  </view>
+</view>

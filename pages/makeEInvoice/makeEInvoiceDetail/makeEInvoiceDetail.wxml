@@ -1,0 +1,51 @@
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}"></wxc-dialog>
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view class='container'>
+  <view wx:if="{{!filterStatus}}" bindtap='jumpGetInvoive'  class='font-22'><text class='blue'>开票历史</text></view>
+      <checkbox-group class='checkbox-group' catchchange="checkboxChange">
+        <block wx:for="{{resultList}}" wx:key="{{index}}">
+          <view class='card'>
+            <view class='card-left'>
+              <view class='card-date'>
+                <image class='icon-time' src='/assests/images/icon-time.png'></image>
+                <text>{{item.datetime}}</text>
+              </view>
+              <view class='card-partyName'>
+                <view class='dot-green'></view>
+                <view class='partyName-text'>{{item.partyName}}</view>
+              </view>
+              <view class='card-costType'>
+                <view class='dot-orange'></view>
+                <view class='costType-text'>{{item.itemName}}</view>
+              </view>
+            </view>
+            <view class='card-right'>
+              <checkbox class='check-box' value="{{index}}" checked="{{item.checked}}"></checkbox>
+              <view class='card-amount'>
+                <view class='unit'>元</view>
+                <view class='amount'>{{item.amount}}</view>
+              </view>
+            </view>
+          </view>
+        </block>
+      </checkbox-group>
+    </view>
+    <view class='block'></view>
+    <view wx:if="{{footShow}}" class='foot'>
+      <view class='foot-count'>
+        <view>选中：</view>
+        <view class='foot-text'>{{countSelect}}</view>
+        <view>张，共</view>
+        <view class='foot-text'>{{countAmount}}</view>
+        <view>元</view>
+      </view>
+      <view class='foot-options'>
+        <view class='check-all'>
+          <checkbox bindtap='checkAll' class='check-box' value="{{index}}" checked="{{ifCheckAll}}"></checkbox>
+          <view>全选</view>
+        </view>
+        <view class='btn-next' bindtap='toMakeEInvoicePage'>下一步</view>
+      </view>
+    </view>

@@ -1,0 +1,86 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/admin/login/login",
+    "pages/eInvoiceTitle/titleDetail/titleDetail",
+    "pages/eInvoiceTitle/titleList/titleList",
+    "pages/eInvoiceWallet/eInvoiceWallet",
+    "pages/admin/mine/mine",
+    "pages/index/index",
+    "pages/index-s/index-s",
+    "pages/queryPages/eInvoice/eInvoice",
+    "pages/eInvoiceDetail/eInvoiceDetail",
+    "pages/eInvoiceDetails/eInvoiceDetails",
+    "pages/citys/citys",
+    "pages/eInvoiceTitle/titleEdit/titleEdit",
+    "pages/makeEInvoice/makeEInvoicePage/makeEInvoicePage",
+    "pages/makeEInvoice/makeEInvoiceDetail/makeEInvoiceDetail",
+    "pages/admin/agreement/agreement",
+    "pages/firstPage/firstPage",
+    "pages/admin/realNameAuth/realNameAuth",
+    "pages/admin/authSuccess/authSuccess",
+    "pages/admin/privateInfo/privateInfo",
+    "pages/getInvoiceSuccess/getInvoiceSuccess",
+    "pages/billDetail/billDetail",
+    "pages/openInvoiceHistory/openInvoiceHistory",
+    "pages/historyInvoiceDetail/historyInvoiceDetail",
+    "pages/billSuccess/billSuccess",
+    "pages/admin/shouquan/shouquan",
+    "pages/payment/statusSuccess/statusSuccess",
+    "pages/payment/QRCode/QRCode",
+    "pages/payment/paymentHistory/paymentHistory",
+    "pages/payment/paymentList/paymentList",
+    "pages/payment/paymentDetail/paymentDetail",
+    "pages/payment/refundDetail/refundDetail",
+    "pages/payment/paymentLists/paymentLists",
+    "pages/lookInvoice/lookInvoice",
+    "pages/payment/lookPayment/lookPayment",
+    "pages/admin/realNameAuthT/realNameAuthT",
+    "pages/admin/sendRecord/sendRecord",
+    "pages/custom/myWallet/myWallet",
+    "pages/custom/getInvoice/getInvoice",
+    "pages/myEinvoiceWallet/myEinvoiceWallet",
+    "pages/myInvoiceDetails/myInvoiceDetails",
+    "pages/customCompany/customCompany"
+  ],
+  "window": {
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "电子票夹",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#eaedf2"
+  },
+  "networkTimeout": {
+    "request": 30000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#485adc",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "/assests/images/icon-home-d.png",
+        "iconPath": "/assests/images/icon-home.png",
+        "pagePath": "pages/home/home",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "/assests/images/icon-eInvoice-d.png",
+        "iconPath": "/assests/images/icon-eInvoice.png",
+        "pagePath": "pages/eInvoiceWallet/eInvoiceWallet",
+        "text": "票夹"
+      },
+      {
+        "selectedIconPath": "/assests/images/icon-mine-d.png",
+        "iconPath": "/assests/images/icon-mine.png",
+        "pagePath": "pages/admin/mine/mine",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

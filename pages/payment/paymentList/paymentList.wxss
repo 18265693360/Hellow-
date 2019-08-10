@@ -1,0 +1,156 @@
+/* pages/paymentList/paymentList.wxss */
+page text{
+  font-size: 26rpx;
+}
+.item{
+  margin-top: 15rpx;
+  background-color: #ffffff;
+  padding: 10rpx 10rpx 40rpx;
+}
+.item-title{
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #dbddec;
+  line-height: 70rpx;
+  padding: 0 20rpx;
+}
+.item-date{
+  line-height: 60rpx;
+  font-size: 26rpx;
+  color: #474747;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0 20rpx;
+}
+.item-r{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx;
+  background-color: #f4f6fa;
+  border: 1rpx solid #c9cbd8;
+  border-radius: 10rpx;
+  height: 135rpx;
+  margin-top: 20rpx;
+}
+.item-r-img{
+  width: 30rpx;
+  position:relative;
+
+
+}
+.item-r-con{
+  font-size: 26rpx;
+  width: 300rpx;
+  color: #666666;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 15rpx;
+}
+.item-r-right{
+  flex: 1;
+  text-align: right;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+}
+.item-r-status{
+  font-size: 30rpx;
+  color: #fc9153;
+}
+.item-r-yuan{
+  color: #666666;
+  font-size: 24rpx;
+}
+.item-r-money{
+  font-size: 44rpx;
+}
+.item-footer{
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 20rpx 0;
+}
+.item-f-money{
+  font-size: 32rpx;
+  color: #fc9153;
+}
+.item-footer view{
+  flex: 1;
+  line-height: 85rpx;
+}
+.item-footer button{
+  font-size: 30rpx;
+  color: #ffffff;
+  width: 210rpx;
+  height: 85rpx;
+  border-radius: 6rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+}
+.search{
+  background-color: #ffffff;
+  font-size: 26rpx;
+  height: 70rpx;
+  padding: 0 10rpx;
+  position: fixed;
+  width: 730rpx;
+  z-index: 99;
+}
+.item-date-s{
+  color: #666666;
+}
+.footerButton{
+  color: #495bdc;
+  font-size: 30rpx;
+  width: 100%;
+  text-align: center;
+  line-height: 85rpx;
+  background-color: #ffffff;
+  border-top: 1rpx solid #dbddec;
+  position: fixed;
+  bottom: 0;
+}
+.scrool{
+  padding-top:70rpx;
+padding-bottom:100rpx;
+
+}
+.abnor-hide {
+  display: none;
+}
+.isLoadmorehide{
+  display: none;
+}
+.ycan{
+  width: 50%;
+  height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index:99;
+  background-color: #ffffff;
+  font-size: 26rpx;
+}
+.clearhide{
+  display: none
+}
+.tapSendOtherhide{
+  display: none;
+}
+.againBtn{
+  width: 660rpx;
+  border: 1px solid #485adc;
+  line-height: 80rpx;
+  text-align: center;
+  color: #485adc;
+  font-size: 30rpx;
+  border-radius: 10rpx;
+  position: absolute;
+  top: 60%;
+  margin: auto;
+  left: 0;
+  right: 0;
+
+}

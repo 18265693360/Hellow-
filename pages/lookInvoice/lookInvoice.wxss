@@ -1,0 +1,63 @@
+/* pages/lookInvoice/lookInvoice.wxss */
+
+.btn-receive {
+  width: 90%;
+  height: 80rpx;
+  margin-left: 5%;
+  color: #4e60df;
+  background: #fff;
+  border: 1rpx solid #4e60df;
+  text-align: center;
+  line-height: 70rpx;
+  margin-top: 20rpx;
+}
+.bill-image {
+  width: 100%;
+  /* height: 416rpx; */
+}
+.reiImage{
+  width: 200rpx;
+  position: absolute;
+  z-index: 99;
+  top: 240rpx;
+  right: 30rpx;
+}
+.email-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.email-input {
+  border: 1rpx solid #e5e5e5;
+ 
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+  width: 98%;
+  height: 80rpx;
+  padding-left: 2%;
+  font-size: 34rpx;
+}
+.foot-text{
+  width: 100%;
+  margin-top: 30rpx;
+  text-align: center;
+  font-size: 30rpx;
+  color: #9e9e9e;
+  position: fixed;
+  bottom: 40rpx;
+}
+.scrooll{
+  width: 100%;
+  height: 550rpx;
+}
+.item-img{
+  width: 98%;
+  margin-left: 1%;
+}
+.isShowhide{
+  display: none;
+}
+.abnor-hide {
+  display: none;
+}

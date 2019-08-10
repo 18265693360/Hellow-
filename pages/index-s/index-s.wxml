@@ -1,0 +1,100 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}"></wxc-dialog>
+<wxc-abnor type="RECORD" title="请先选择开票单位哦" wx:if="{{abnorShow}}"></wxc-abnor>
+<view class='body'>
+  <view class='block'>
+    <view class="container">
+      <!-- 头部 -->
+      <view class='container-head'>
+        <view class='head-content'>
+          <!-- 选择开票单位 -->
+          <view class='content-left'>
+            <navigator class='title-city' url='/pages/citys/citys' hover-class="none">
+              <view class='agency-select'>
+              <image class='icon-arrow2' src='/assests/images/selectdan.png'></image>
+                <input class='unit' disabled value="{{parametersh.company}}" placeholder='请选择开票单位'></input>
+                  <image class='icon-arrow' src='/assests/images/add.png'></image>
+              </view>
+            </navigator>
+            <view class='automatic'>
+              <picker bindchange="bindPickerChangeHistory" value="{{index}}" range="{{queryHistoryStorage}}" range-key="company">
+                <image class='icon-location' src='/assests/images/icon-location.png'></image>
+                <view class='automatic-text'>历史取票单位</view>
+              </picker>
+
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!--内容-->
+  <view hidden='{{contentHidden}}'>
+    <!--hospital_v1-->
+    <view wx:if="{{microProgramPage == 'hospital_v1'}}">
+      <image class='title-img' src='/assests/images/bg_hospital.png'></image>
+      <view class='content'>
+        <view class='body-h'>
+          <view class='input-item'>
+            <view class='input-title'>真实姓名</view>
+            <input class='user-input' bindinput="nameInput" value='{{parametersh.name}}'></input>
+
+          </view>
+          <view class='input-item'>
+            <view class='input-title'>用户编号</view>
+            <input name="cardId" bindinput="socialCardInput" class="user-input" placeholder-class="psection"  value="{{parametersh.card_no}}" placeholder="请输入身份证号/社保卡号/手机号" />
+          </view>
+          <view class='foot-h'>
+            <button bindtap="checkTap" class="btn-check" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">{{checkBtnText}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--university_v1-->
+    <view wx:elif="{{microProgramPage == 'university_v1'}}">
+      <image class='title-img' src='/assests/images/bg_hospital.png'></image>
+      <view class='content'>
+        <view class='body-h'>
+          <view class='input-item'>
+            <view class='input-title'>真实姓名</view>
+            <input class='user-input' bindinput="nameInput" value='{{parametersh.name}}'></input>
+
+          </view>
+          <view class='input-item'>
+            <view class='input-title'>用户编号</view>
+            <input name="cardId" bindinput="socialCardInput" class="user-input" placeholder-class="psection" type="idcard" value="{{parametersh.card_no}}" placeholder="请输入身份证号/学号/电话号码" />
+          </view>
+          <view class='foot-h'>
+            <button bindtap="checkTap" class="btn-check" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">{{checkBtnText}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!--hospital_phone  -->
+    <view wx:elif="{{microProgramPage == 'hospital_phone'}}">
+      <image class='title-img' src='/assests/images/bg_hospital.png'></image>
+      <view class='content'>
+        <view class='body-h'>
+          <view class='input-item'>
+            <view class='input-title'>真实姓名</view>
+            <input class='user-input' bindinput="nameInput" value='{{parametersh.name}}'></input>
+
+          </view>
+          <view class='input-item'>
+            <view class='input-title'>手机号码</view>
+            <input name="cardId" disabled class="user-input" placeholder-class="psection" type="idcard" value="{{parametersh.card_no}}"  />
+          </view>
+          <view class='foot-h'>
+            <button bindtap="checkTap" class="btn-check" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">{{checkBtnText}}</button>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+</view>

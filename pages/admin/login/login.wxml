@@ -1,0 +1,21 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view class='header'>
+  <image class='title-img' src='/assests/images/bg-pageLogin.png'></image>
+</view>
+
+<view class='container'>
+  <view class='input-phone'>
+    <image class='img-icon' src='/assests/images/icon-phone.png'></image>
+    <input bindinput="phoneInput" class="phone-input" placeholder-class="psection" type="number" value="{{parameters.phone}}" placeholder="请输入手机号码" />
+  </view>
+  <view class='input-identify'>
+    <image class='img-icon' src='/assests/images/icon-identify.png'></image>
+    <input bindinput="verifyCodeInput" class="user-input" placeholder-class="psection" type="number" value="{{parameters.verifyCode}}" placeholder="请输入验证码" />
+    <view wx:if="{{!isShow}}" class='get-identify' bindtap='getCode'>获取验证码</view>
+    <view wx:if="{{isShow}}" class='get-identify-wite'>{{sec}}秒后重新发送</view>
+  </view>
+</view>
+<view class='agreement'>注册即表示，你已阅读并同意
+  <navigator class='agreement-url' hover-class='none' url='/pages/admin/agreement/agreement'>《用户注册协议》</navigator>
+</view>
+<button bindtap="nextTap" class="btn-next" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">确定</button>

@@ -1,0 +1,13 @@
+/* pages/admin/shouquan/shouquan.wxss */
+.item{
+  background-color: #fff;
+  height: 94rpx;
+  line-height: 94rpx;
+  border-bottom:1rpx solid #E0E0E0;
+  border-top:1rpx solid #E0E0E0;
+  margin-top: 40rpx;
+  padding: 0 40rpx;
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+}

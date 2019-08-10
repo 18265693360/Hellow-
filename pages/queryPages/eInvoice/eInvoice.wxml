@@ -1,0 +1,68 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view class='container'>
+  <!-- 图标 -->
+  <image class='title-img' src='/assests/images/bg_handle.png'></image>
+  <view class='content'>
+    <view class='body'>
+      
+      <radio-group class="radio-group" bindchange="radioChange">
+      <view class='check-title'>票据类型：</view>
+        <label>
+          <view class='check-item'>
+            <radio class='radio' checked="{{eInvoiceCheck}}" value="财政电子票据" />
+            <view class='check-text'>财政电子票据</view>
+        </view>
+        </label>
+        <label>
+          <view class='check-item'>
+            <radio class='radio' checked="{{invoiceCheck}}" value="税务电子发票" />
+            <view class='check-text'>税务电子发票</view>
+          </view>
+        </label>
+        
+      </radio-group>
+    
+      <!-- 票代码输入框 -->
+      <view class='input-item'>
+        <image class='icon-input' src='/assests/images/icon-eInvoiceCode.png'></image>
+        <input name="eInvoiceCode" bindinput="codeInput" class="user-input" placeholder-class="psection" type="number" value="{{parameters.eInvoiceCode}}" maxlength="12" placeholder="{{codePlaceholder}}" />
+      </view>
+      <!-- 票号码输入框 -->
+      <view class='input-item'>
+        <image class='icon-input' src='/assests/images/icon-eInvoiceNumber.png'></image>
+        <input name="eInvoiceNumber" bindinput="numberInput" class="user-input" placeholder-class="psection" type="number" value="{{parameters.eInvoiceNumber}}" placeholder="{{numberPlaceholder}}" />
+      </view>
+      <!-- 校验码输入框 -->
+      <view class='input-item'>
+        <image class='icon-input' src='/assests/images/icon-randomNumber.png'></image>
+        <input name="randomNumber" bindinput="randomInput" class="user-input" placeholder-class="psection" type="text" value="{{parameters.randomNumber}}" maxlength="6" placeholder="{{queryPlaceholder}}" />
+      </view>
+      <!-- 不含税金额输入框 -->
+      <view class='input-item' class="input-item hide{{isDateShow?'':'show'}}">
+        <image class='icon-input' src='/assests/images/money-icon.png'></image>
+        <input name="randomNumber" bindinput="moneyInput" class="user-input" placeholder-class="psection" type="digit" value="{{parameters.money}}" placeholder="专票必填不含税金额" />
+      </view>
+      <!-- 发票日期输入框 -->
+      <view class='input-item' class="input-item hide{{isDateShow?'':'show'}}">
+        <image class='icon-input' src='/assests/images/riqi.png'></image>
+        <input class="user-input" placeholder-class="psection" type="text"  placeholder="请选择开票日期" value='{{parameters.issueDate}}'/>
+        <picker mode="date" class="user-pickerB" value="{{parameters.issueDate}}" bindchange="datePicker" >
+          <view class="user-picker">
+          </view> 
+        </picker>
+      </view>
+      <view class='foot'>
+        <checkbox-group class='checkbox-group' catchchange="checkboxChange">
+          <view wx:if="{{ifSubscribe}}" class='agreement'>
+            <checkbox class='chk-agreement' checked="{{agreeChecked}}"></checkbox>
+            <view class='agreement-text'>同意自动找票并通知</view>
+          </view>
+        </checkbox-group>
+        <!-- 提交按钮 -->
+        <button bindtap="checkTap" class="btn-check" style="opacity: {{opacity}};background-color: #00bcd4;color:white;" disabled="{{btnDisable}}" loading="{{btnLoading}}">查找电子票</button>
+      </view>
+    </view>
+
+
+  </view>
+</view>

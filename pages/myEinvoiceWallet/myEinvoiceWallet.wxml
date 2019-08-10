@@ -1,0 +1,128 @@
+<!--pages/myEinvoiceWallet/myEinvoiceWallet.wxml-->
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}"></wxc-dialog>
+<!-- wx:if='{{isTips}}' -->
+<view class="topTip" bindtap="jumpTip" wx:if='{{isTips}}'>
+  <image class="topTipImg" src="/assests/images/icon-horn.png" />
+  <view class="wrap">{{tips}}
+  </view>
+  <image class="topTipR" src="/assests/images/icon-arrow-r.png" />
+</view>
+
+<view class='headback'>
+  <view class='headS' bindtap='getFocus'>
+    <image mode='widthFix' class='searchT' src='../../assests/images/searchT.png'></image>
+    <input class='searchI' bindblur='searchD' placeholder-class="pl" bindinput='searchN' confirm-type='search' focus='{{isfocus}}' placeholder='交款人/票据号码搜索' value='{{searchInputValue}}'></input>
+  </view>
+</view>
+<wxc-select class="select--{{selectStatus}}" partLeft="开票日期" partCenter="" partRight="票据状态" centerContent="{{centerContent}}" rightContent="{{rightContent}}" catchshowDatepicker="filterPattern" catchhidebg="filterPattern" catchlistRight="filterPattern"
+  catchtapDay="tapDayTap" curYear="{{curYear}}" curMonth="{{curMonth}}" curDate="{{curDate}}" catchrightSelect="rightSelect">
+</wxc-select>
+<view wx:if="{{filterStatus}}" class='filterCard'>
+  <view class='fliterFiexd'>
+    <view class='filterTitle'>全部结果>></view>
+    <view wx:if="{{dateFilterStatus}}" class='fliterItem' catchtap='cancelDateFilter'>
+      <view class='filterContent'>{{dateFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+    <view wx:if="{{statusFilterStatus}}" class='fliterItem' catchtap='cancelStatusFilter'>
+      <view class='filterContent'>{{statusFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+    <view wx:if="{{nameFilterStatus}}" class='fliterItem' catchtap='cancelNameFilter'>
+      <view class='filterContent'>{{nameFilterText}}</view>
+      <image class='icon-close' src='/assests/images/icon-close.png'></image>
+    </view>
+  </view>
+</view>
+
+
+<view class='container'>
+  <!-- 未归集票据列表 -->
+  <!-- <view style='width:100%' class="{{collectStatus?'select--hide':''}}">
+    <block wx:for="{{unResult}}" wx:key="{{index}}">
+      <view class='eInvoice' bindtap='toDetail'  data-result='{{item}}'>
+        <view class='item-title'>
+          <view class='title-type'>
+            <image class='type-img' src='/assests/images/icon-eInvoice-content.png'></image>
+            <view class='type-text'>{{item.invoicingPartyName}}</view>
+          </view>
+          <view class='title-date'>{{item.issueDate}}</view>
+        </view>
+        <view>
+          <view class='unitName'>交款人： {{item.payerPartyName}}
+            <image src='{{item.isStatus}}' class="itemImg " mode='widthFix'></image>
+          </view>
+          <view class='code'>票据号码：{{item.eInvoiceNumber}}
+          </view>
+          <view class='item-content'>
+            <view class='code'>备注：{{item.remark}}
+            </view>
+            <view class='amount'>
+              ￥{{item.totalAmount}}
+            </view>
+          </view>
+          <view class='checkbox'>
+            <checkbox checked='{{checked}}' data-index='{{index}}' data-code="{{item.eInvoiceCode}}" data-num="{{item.eInvoiceNumber}}" data-random="{{item.randomNumber}}" catchtap='checkboxChange' class="{{collectStatus?'select--hide':''}}"></checkbox>
+          </view>
+
+        </view>
+      </view>
+    </block>
+    <wxc-abnor type="DATA" class='abnor-{{abnorShowUN}}'></wxc-abnor>
+    <wxc-loadmore is-end="{{true}}" text="已加载全部票据" class="isLoadmore{{isLoadmoreUN?'':'hide'}}"></wxc-loadmore>
+  </view> -->
+  <!-- 已归集票据列表 class="{{!collectStatus?'select--hide':''}}"-->
+  <view style='width:100%' >
+    <block wx:for="{{result}}" wx:key="{{index}}">
+      <view class='eInvoice' bindtap='toDetail'  data-result='{{item}}'>
+        <view class='item-title'>
+          <view class='title-type'>
+            <image class='type-img' src='/assests/images/icon-eInvoice-content.png'></image>
+            <view class='type-text'>{{item.invoicingPartyName}}</view>
+          </view>
+          <view class='title-date'>{{item.issueDate}}</view>
+        </view>
+        <view>
+          <view class='unitName'>交款人： {{item.payerPartyName}}
+            <image src='{{item.isStatus}}' class="itemImg " mode='widthFix'></image>
+          </view>
+          <view class='code'>票据号码：{{item.eInvoiceNumber}}
+          </view>
+          <view class='item-content'>
+            <view class='code'>备注：{{item.remark}}
+            </view>
+            <view class='amount'>
+              ￥{{item.totalAmount}}
+            </view>
+          </view>
+ 
+        </view>
+      </view>
+    </block>
+    <wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+    <wxc-loadmore is-end="{{true}}" text="已加载全部票据" class="isLoadmore{{isLoadmore?'':'hide'}}"></wxc-loadmore>
+  </view>
+
+  <!-- <view class="foot {{collectSelect?'':'abnor-hide'}}">
+    <view class='foot-down'>
+      <view style='line-height:100rpx;'>
+        <checkbox bindtap='allCheckboxChange' checked='{{allChecked}}'></checkbox>
+        <label style='font-size:28rpx;color:#666666;'>{{checkboxtext}}</label>
+      </view>
+      <button class='btn-check' bindtap='collectBtn'>归集</button>
+    </view>
+  </view>
+  <view class="item-content footer">
+    <view class="footer-item {{collectStatus?'':'footer-itemActive'}}" bindtap="unCollectActive">未归集</view>
+    <view class="footer-item {{collectStatus?'footer-itemActive':''}}" bindtap="collectActive">已归集</view>
+
+  </view> -->
+  <!-- <view class="line-box">
+    <view class="line-blue {{collectStatus?'':'line-blueActive'}}"></view>
+    <view class="line-blue {{collectStatus?'line-blueActive':''}}"></view>
+
+  </view> -->
+
+</view>

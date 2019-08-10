@@ -1,0 +1,33 @@
+<!--pages/paymentHistory/paymentHistory.wxml-->
+<wxc-abnor type="DATA" class='abnor-{{abnorShow}}'></wxc-abnor>
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<view>
+  <view class='item' wx:for='{{dataList}}' wx:key='{{index}}'>
+    <view class='item-title'>{{item.agencyName}}</view>
+    <view class='item-date'>
+      <text>就诊卡号：{{item.uniqueCode}}</text>
+      <text>住院日期：<text class='item-date-s'>{{item.date}}</text></text>
+    </view>
+    <view>
+      <view class='item-r' bindtap='jumpRefund'
+      wx:for='{{item.list}}' wx:for-index='idx'
+      wx:key='{{idx}}'
+      wx:for-item='itemlist'
+      data-id='{{itemlist.id}}'>
+        <view><image class='item-r-img' src='../../../assests/images/icon-eInvoice-content.png' mode='widthFix'></image></view>
+        <view class='item-r-con'>
+          <view>缴费时间：{{itemlist.issueDate}}</view>
+          <view>票据号码：{{itemlist.voucherNumber}}</view>
+          <view>支付方式：{{itemlist.payMethod}}</view>
+        </view>
+        <view class='item-r-right'>
+          <view class='item-r-status {{itemlist.style}}'>{{itemlist.voucherStatus}}</view>
+          <view class='item-r-yuan'><text class='item-r-money'>{{itemlist.amount}}</text>元</view>
+        </view>
+      </view>
+    
+    </view>
+  </view>
+ 
+</view>
+<wxc-loadmore is-end="{{true}}" text="已加载全部票据" class="isLoadmore{{isLoadmore?'':'hide'}}"></wxc-loadmore>

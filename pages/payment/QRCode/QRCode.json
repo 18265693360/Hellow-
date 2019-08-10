@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index"
+  },
+  "navigationBarTitleText": "结算二维码"
+}

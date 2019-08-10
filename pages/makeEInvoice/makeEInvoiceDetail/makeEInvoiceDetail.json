@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "自助开票",
+  "usingComponents": {
+    "wxc-tab": "/../../../UI/wxc-tab/dist/index",
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index",
+    "wxc-dialog": "/../../../UI/wxc-dialog/dist/index",
+    "wxc-abnor": "/../../../UI/wxc-abnor/dist/index"
+  }
+}

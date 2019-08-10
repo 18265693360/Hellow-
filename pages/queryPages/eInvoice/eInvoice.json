@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "手工查票",
+  "usingComponents": {
+    "wxc-toast": "/../../../UI/wxc-toast/dist/index"
+  }
+}

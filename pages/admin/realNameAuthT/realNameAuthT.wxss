@@ -1,0 +1,97 @@
+/* pages/admin/realNameAuthT/realNameAuthT.wxss */
+page{
+  background-color: #ffffff;
+}
+.header-tip{
+  color: #868686;
+  font-size: 26rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  background-color: #feffef;
+  border-bottom:1rpx solid #dadbdc;
+  border-top:1rpx solid #dadbdc;
+  padding-left: 90rpx;
+}
+.header-img{
+  width:26rpx;
+height:30rpx;
+position:relative;
+top:7rpx;
+}
+.body-img{
+  width: 276rpx;
+  height: 226rpx;
+  display:block;
+margin:66rpx auto 80rpx;
+}
+.body-content{
+  font-size: 34rpx;
+  text-align: center;
+}
+.body-tip{
+  font-size: 26rpx;
+  color: #848484;
+  margin: 30rpx auto 88rpx;
+  text-align: center;
+}
+.body-name{
+  border-bottom: 1rpx solid #E0E0E0;
+  border-top: 1rpx solid #E0E0E0;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding-left: 35rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+.body-id{
+  border-top: none;
+}
+.body-left{
+  font-size: 28rpx;
+  color: #363636;
+  top:-2rpx;
+  position:relative;
+}
+.body-right{
+  font-size: 28rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  padding:0 30rpx;
+  width: 455rpx;
+  margin-top:12rpx;
+
+}
+.body-name-img{
+  width: 32rpx;
+  height: 40rpx;
+  position: relative;
+  top:11rpx;
+left:28rpx;
+
+}
+.btn-check{
+  width: 88%;
+  margin: 80rpx auto 0; 
+  height: 80rpx;
+  background: linear-gradient(to right, #8896ff, #485adc);
+  color: #fff;
+  line-height: 80rpx;
+  font-size: 28rpx;
+}
+.imageBtn{
+  width: 70rpx;
+}
+.btn-receive {
+  width: 88%;
+  height: 80rpx;
+  margin-left: 6%;
+  color: #4e60df;
+  background: #fff;
+  border: 1rpx solid #4e60df;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  margin-top: 40rpx;
+  box-sizing: border-box;
+}

@@ -1,0 +1,86 @@
+<wxc-toast is-show="{{$toast.show}}" text="{{toast}}"></wxc-toast>
+<wxc-dialog class="wxc-dialog" phone='{{dialog_phone}}' title="{{dialog_title}}" image="{{dialog_img}}" bindphone="{{dialog_phone_tap}}" bindimg="{{dialog_img_tap}}" content="{{dialog_content}}" cancel-text="{{dialog_cancelText}}" confirm-text="{{dialog_confirmText}}"
+  bindconfirm="{{dialog_confirm}}" bindcancel="{{dialog_cancel}}">
+  <view class='email-info input-{{inputStatus}}'>
+    <input name="email" bindinput="emailInput" class="email-input" placeholder-class="psection" type="text" value="{{sentToEmail}}" placeholder="{{placeH}}" cursor-spacing="100" />
+  </view>
+</wxc-dialog>
+<wxc-popup class="J_Popup">
+  <view class='popup__content'>
+    <canvas class='canvas' canvas-id='canvas'></canvas>
+  </view>
+</wxc-popup>
+<view class='pad'>
+
+  <view class='new-con top20'>
+    <view class='img'>
+      <image class='imageB' mode='widthFix' src='../../assests/images/invoiceB.png'> </image>
+    </view>
+    <view class='new-title'>{{detail.eInvoiceType}}</view>
+    <view class='new-up'>
+      <view class='content-item'>
+        <view class='new-up-left'>开票单位</view>
+        <view class='new-up-right'>{{detail.invoicingPartyName}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>票据代码</view>
+        <view class='new-up-right'>{{detail.eInvoiceCode}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>票据号码</view>
+        <view class='new-up-right'>{{detail.eInvoiceNumber}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>校验码</view>
+        <view class='new-up-right'>{{detail.randomNumber}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>开票日期</view>
+        <view class='new-up-right'>{{detail.issueDate}}</view>
+      </view>
+      <view class='content-item'>
+        <view class='new-up-left'>交款人</view>
+        <view class='new-up-right'>{{detail.payerPartyName}} </view>
+      </view>
+
+      <view class='content-item'>
+        <view class='new-up-left'>金额合计</view>
+        <view class='new-up-right'>{{detail.totalAmount}}元</view>
+      </view>
+      <image src='{{detail.isStatus}}' class="itemImg " mode='widthFix'></image>
+    </view>
+  </view>
+  <view class='new-con'>
+    <view class='img'>
+      <image class='imageB' mode='widthFix' src='/assests/images/item.png'> </image>
+    </view>
+    <view class='content-item tips'>
+      <view class='new-up-left'>备注</view>
+      <view class='new-up-right'>{{detail.remark}} </view>
+    </view>
+  </view>
+  <view class='new-con'>
+    <!-- wx:if='{{isNormal}}' -->
+    <view class='newBtn'>
+      <view class='new-item' bindtap="sentToOther">
+        <view>发送给他人</view>
+        <view style='color:#9a9a9a;font-size:26rpx;'>对方手机号
+          <image class='new-right' mode='widthFix' src='/assests/images/icon-arrow-r.png'></image>
+        </view>
+      </view>
+      <view class='new-item' bindtap="{{buttonClicked?'lookInvoice':''}}">
+        <view>查看电子票</view>
+        <view style='color:#9a9a9a;font-size:26rpx;'>
+          <image class='new-right' mode='widthFix' src='/assests/images/icon-arrow-r.png'></image>
+        </view>
+      </view>
+      <view class='new-item' wx:if='{{isNormal}}' bindtap="showPopup">
+        <view>显示二维码</view>
+        <view style='color:#9a9a9a;font-size:26rpx;'>
+          <image class='new-right' mode='widthFix' src='/assests/images/icon-arrow-r.png'></image>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
